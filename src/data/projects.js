@@ -1,9 +1,9 @@
 // TODO Add a couple lines about each project
 const data = [
   {
-    title: 'template',
-    subtitle: '2023 template',
-    link: 'https://google.com',
+    title: 'MedChat',
+    subtitle: '2023 - Artificial Intelligence',
+    link: '',
     image: '/images/projects/nearestdollar.jpg',
     date: '2015-11-20',
     desc:
@@ -13,11 +13,11 @@ const data = [
       + 'the charity of your choice.',
   },
   {
-    title: 'draft',
-    subtitle: '2023 Project',
-    link: 'https://google.com',
+    title: 'MIDI Saber',
+    subtitle: '2021 - Virtual Reality',
+    link: 'https://www.youtube.com/watch?v=fW6c3pb60kE',
     image: '/images/projects/nearestdollar.jpg',
-    date: '2015-11-20',
+    date: '2021-03-08',
     desc:
       'Built for a social impact hackathon. '
       + 'NearestDollar connected to your bank accounts, credit cards, '
@@ -25,9 +25,9 @@ const data = [
       + 'the charity of your choice.',
   },
   {
-    title: 'Nearest Dollar',
-    subtitle: '2015 BVP Hackathon',
-    link: '',
+    title: 'Law-GPT',
+    subtitle: '2023 - Artificial Intelligence',
+    link: 'https://www.youtube.com/watch?v=19iWJPfot6k&t=6s',
     image: '/images/projects/nearestdollar.jpg',
     date: '2015-11-20',
     desc:
@@ -35,17 +35,6 @@ const data = [
       + 'NearestDollar connected to your bank accounts, credit cards, '
       + 'or debit cards and rounded up your purchases to donate the balance to '
       + 'the charity of your choice.',
-  },
-  {
-    title: 'Harvest',
-    subtitle: 'Won 3rd. place in 2015 Techcrunch Disrupt SF Hackathon',
-    link: 'https://devpost.com/software/harvest',
-    image: '/images/projects/harvest.jpg',
-    date: '2015-09-20',
-    desc:
-      'Won ~ $7000 in prizes for an advanced, low cost monitoring solution '
-      + 'for crops. Harvest was designed to catch irrigation leaks, overwatering, '
-      + 'and nutrient deficiencies at an affordable price for the developing world.',
   },
 ];
 
