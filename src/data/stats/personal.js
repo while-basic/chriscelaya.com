@@ -25,11 +25,11 @@ const data = [
     value: <Age />,
   },
   {
-    key: 'countries',
-    label: 'Countries visited',
-    value: 1,
+    key: 'cities',
+    label: 'Cities Visited',
+    value: 17,
     link:
-      'https://www.google.com/maps/d/embed?mid=1iBBTscqateQ93pWFVfHCUZXoDu8&z=2',
+      'https://www.google.com/maps/d/u/0/edit?mid=138lqXaH6ouu7EZ-V09lC8AWWdhAnd0A&usp=sharing',
   },
   {
     key: 'location',
