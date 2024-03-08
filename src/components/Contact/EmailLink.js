@@ -10,21 +10,15 @@ const validateText = (text) => {
 };
 
 const messages = [
-  'hi',
-  'hello',
-  'hola',
-  'you-can-email-me-at-literally-anything! Really',
-  'well, not anything. But most things',
-  'like-this',
-  'or-this',
-  'but not this :(  ',
-  'you.can.also.email.me.with.specific.topics.like',
-  'just-saying-hi',
-  'please-work-for-us',
-  'help',
-  'admin',
-  'or-I-really-like-your-website',
-  'thanks',
+  'hi ',
+  'hello ',
+  'hola ',
+  'you can email literally about anything! ',
+  'well, not anything, but most things... ',
+  'please work for us ',
+  'help me ',
+  'help US ',
+  'admin ',
 ];
 
 const useInterval = (callback, delay) => {
