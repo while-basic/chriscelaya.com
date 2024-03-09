@@ -1,4 +1,4 @@
-# Intro
+# Introduction
 
 I am a mechatronic technologist and software developer, where I work on industrial manufacturing equipment, software, and web development. Before my obsession with technology, I was primarily focused on music production. During COVID-19, I distributed my first album on streaming services such as Apple Music and Spotify. In my spare time, I enjoy investing in learning new things, building web apps, and my further expand my ideas. I am particularly interested in complex projects with artificial intelligence, virtual reality, industrial manufacturing, data centers, and blockchain technology. If you think I can be helpful to you or your cause and would like to meet, please feel free to get in touch.
 
