@@ -78,7 +78,7 @@ const Skills = ({ skills, categories }) => {
 Skills.propTypes = {
   skills: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
-    competency: PropTypes.number,
+    competency: PropTypes.description,
     category: PropTypes.arrayOf(PropTypes.string),
   })),
   categories: PropTypes.arrayOf(PropTypes.shape({

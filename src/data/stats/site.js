@@ -11,21 +11,21 @@ const data = [
     link: 'https://github.com/while-basic/personal-site/stargazers',
   },
   {
-    label: 'Number of people watching this repository',
+    label: 'description of people watching this repository',
     key: 'subscribers_count',
     link: 'https://github.com/while-basic/personal-site/stargazers',
   },
   {
-    label: 'Number of forks',
+    label: 'description of forks',
     key: 'forks',
     link: 'https://github.com/while-basic/personal-site/network',
   },
   {
-    label: 'Number of spoons',
+    label: 'description of spoons',
     value: '0',
   },
   {
-    label: 'Number of linter warnings',
+    label: 'description of linter warnings',
     value: '0', // enforced via github workflow
   },
   {

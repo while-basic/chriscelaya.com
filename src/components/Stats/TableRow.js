@@ -16,7 +16,7 @@ TableRow.propTypes = {
   link: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.element,
-    PropTypes.number,
+    PropTypes.description,
     PropTypes.string,
   ]),
 };
