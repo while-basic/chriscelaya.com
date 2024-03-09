@@ -65,17 +65,18 @@ const work = [
       'Quality Assurance: Oversaw testing and assembly of low voltage electronic products for large clients, guaranteeing high-quality deliverables.',
     ],
   },
-  // The Self Employed section was duplicated, removing the duplicate
   {
     name: 'Delfingen',
     position: 'Maintenance Technician',
     url: 'https://www.delfingen.com/',
     startDate: '2015-01-01',
     endDate: '2016-01-12',
-    summary: 'Industrial Maintenance Management: Managed maintenance on powered industrial equipment, including pneumatic, hydraulic, water, and electrical systems, to ensure uninterrupted operations.'
-              + 'Technical Proficiency: Executed tasks such as PVC cutter repair, electrical troubleshooting, and preventative maintenance, minimizing downtime and enhancing efficiency.'
-              + 'Problem Resolution: Identified and resolved issues with corrugated screws, cutters, pullers, and printing systems, ensuring machinery longevity and reliability.'
-              + 'Versatile Skill Set: Demonstrated versatility with additional duties including welding, fabrication, and building maintenance, showcasing a broad technical skill set.',
+    summary: 'At Delfingen, my duties included managing and maintaining powered industrial equipment, encompassing a wide range of systems powered by pneumatic, hydraulic, water, and electrical sources.'
+            + 'I was responsible for carrying out a variety of tasks, including PVC cutter repair, electrical troubleshooting, and preventative maintenance, to ensure the optimal performance and reliability of our equipment.'
+            + 'My role required me to quickly determine and resolve issues with corrugated screws, cutters, pullers, and printing systems, leveraging my technical skills to maintain high operational standards.'
+            + 'In addition to these responsibilities, I completed various additional duties such as welding, fabrication, and building maintenance.'
+            + 'These tasks allowed me to contribute to the overall maintenance and improvement of our facilities, ensuring a safe and efficient working environment.'
+            + 'My experience at Delfingen not only honed my technical skills but also underscored my commitment to excellence and my ability to manage and maintain complex industrial equipment effectively.',
     highlights: [
       'Managed and maintained powered industrial equipment, including systems powered by pneumatic, hydraulic, water, and electrical sources.',
       'Conducted PVC cutter repair, electrical troubleshooting, and preventative maintenance, ensuring equipment reliability and longevity.',
