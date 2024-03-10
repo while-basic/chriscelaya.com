@@ -44,6 +44,18 @@ const data = [
       + 'With this service, users can securely register and manage their domain names directly on the blockchain, ensuring transparency, decentralization, and enhanced security.'
       + 'By leveraging blockchain technology, it offers a seamless and reliable solution for domain name registration, ownership verification, and management, empowering users to take full control of their online presence.',
   },
+  {
+    title: '3D Assembly Line Website',
+    subtitle: '2024 - Web Development, 3D',
+    link: 'https://my.spline.design/assemblyline-c64f9158175071011952192dadb3bbb5/',
+    image: '/images/projects/assembly.webp',
+    date: '2021-10-01',
+    desc:
+      'A revolutionary top-level domain (TLD) name service built on the Polygon network\'s blockchain technology.'
+      + 'It provides an innovative alternative to traditional domain name services like Namecheap and GoDaddy.'
+      + 'With this service, users can securely register and manage their domain names directly on the blockchain, ensuring transparency, decentralization, and enhanced security.'
+      + 'By leveraging blockchain technology, it offers a seamless and reliable solution for domain name registration, ownership verification, and management, empowering users to take full control of their online presence.',
+  },
 ];
 
 export default data;
