@@ -54,6 +54,16 @@ const data = [
       'In this project, I animated a 3D environment showcasing a small assembly line where coins are meticulously guided down a conveyor belt.'
       + 'This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
   },
+  {
+    title: '3D Assembly Line Website',
+    subtitle: '2024 - Web Development, 3D',
+    link: 'https://my.spline.design/assemblyline-c64f9158175071011952192dadb3bbb5/',
+    image: '/images/projects/assembly.webp',
+    date: '2021-10-01',
+    desc:
+      'In this project, I animated a 3D environment showcasing a small assembly line where coins are meticulously guided down a conveyor belt.'
+      + 'This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
+  },
 ];
 
 export default data;

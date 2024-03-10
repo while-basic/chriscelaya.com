@@ -25,6 +25,11 @@ const skills = [
     category: ['Web Development', 'Javascript'],
   },
   {
+    title: 'Tailwind',
+    competency: 1,
+    category: ['Web Development', 'Tailwind'],
+  },
+  {
     title: 'React',
     competency: 2,
     category: ['Web Development', 'Javascript'],
@@ -60,7 +65,7 @@ const skills = [
     category: ['Web Development', 'Databases'],
   },
   {
-    title: 'PostgreSQL/SQLite3/SQL/Redshift',
+    title: 'PostgreSQL/SQLite3/SQL',
     competency: 2,
     category: ['Web Development', 'Databases', 'Languages'],
   },
@@ -223,6 +228,16 @@ const skills = [
     title: 'Prompt Engineering',
     competency: 3,
     category: ['Languages', 'Artificial Intelligence', 'Prompt Engineering'],
+  },
+  {
+    title: 'Java',
+    competency: 2,
+    category: ['Languages', 'Java'],
+  },
+  {
+    title: 'Nuxt',
+    competency: 2,
+    category: ['Languages', 'Web Development', 'Nuxt'],
   },
 ].map((skill) => ({ ...skill, category: skill.category.sort() }));
 
