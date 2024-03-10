@@ -51,10 +51,8 @@ const data = [
     image: '/images/projects/assembly.webp',
     date: '2021-10-01',
     desc:
-      'A revolutionary top-level domain (TLD) name service built on the Polygon network\'s blockchain technology.'
-      + 'It provides an innovative alternative to traditional domain name services like Namecheap and GoDaddy.'
-      + 'With this service, users can securely register and manage their domain names directly on the blockchain, ensuring transparency, decentralization, and enhanced security.'
-      + 'By leveraging blockchain technology, it offers a seamless and reliable solution for domain name registration, ownership verification, and management, empowering users to take full control of their online presence.',
+      'In this project, I animated a 3D environment showcasing a small assembly line where coins are meticulously guided down a conveyor belt.'
+      + 'This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
   },
 ];
 
