@@ -15,7 +15,7 @@ Degree.propTypes = {
     degree: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     school: PropTypes.string.isRequired,
-    year: PropTypes.description.isRequired,
+    year: PropTypes.string.isRequired,
   }).isRequired,
 };
 
