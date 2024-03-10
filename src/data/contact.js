@@ -14,11 +14,6 @@ const data = [
     label: 'Github',
     icon: faGithub,
   },
-  // {
-  //   link: 'https://facebook.com/d',
-  //   label: 'Facebook',
-  //   icon: faFacebookF,
-  // },
   {
     link: 'https://www.instagram.com/chriscelaya/',
     label: 'Instagram',
