@@ -1,4 +1,3 @@
-// TODO Add a couple lines about each project
 const data = [
   {
     title: 'MedChat',
@@ -8,7 +7,6 @@ const data = [
     date: '2021-11-01',
     desc:
       'MedChat is a cutting-edge web application that leverages the power of Llama2, a state-of-the-art large language model, to provide accurate and personalized patient diagnoses.'
-      + 'This innovative platform allows users to input their symptoms, medical history, and other relevant information, which is then processed by the Llama2 model.'
       + 'MedChat\'s user-friendly interface enables seamless interaction with the Llama2 model, streamlining the diagnostic process and reducing the time and effort required for healthcare professionals to evaluate and diagnose patients.',
   },
   {
@@ -33,6 +31,18 @@ const data = [
       'LawGPT is a groundbreaking Apple Watch application that puts legal expertise at your fingertips, powered by the cutting-edge language model from OpenAI. This innovative app is designed to provide users with on-the-go access to accurate and reliable legal information, empowering them to make informed decisions without the immediate need for a lawyer.'
       + 'With LawGPT, users can simply speak into their Apple Watch, asking legal questions or seeking guidance on various legal matters. The app seamlessly integrates with OpenAI\'s advanced natural language processing capabilities, allowing it to understand and interpret the user\'s queries with remarkable accuracy.'
       + 'While LawGPT is not a substitute for professional legal counsel, it serves as a valuable resource for individuals seeking quick and reliable legal information on-the-go. Whether you\'re a business professional navigating contractual obligations, a tenant seeking to understand your rights, or simply someone curious about legal matters, LawGPT empowers you with the knowledge you need, right at your wrist.',
+  },
+  {
+    title: 'Blockchain TLD Service',
+    subtitle: '2021 - Blockchain Technology',
+    link: 'hhttps://www.youtube.com/watch?v=W3PUwbJamiY',
+    image: '/images/projects/top-level.webp',
+    date: '2021-10-01',
+    desc:
+      'A revolutionary top-level domain (TLD) name service built on the Polygon network\'s blockchain technology.'
+      + 'It provides an innovative alternative to traditional domain name services like Namecheap and GoDaddy.'
+      + 'With this service, users can securely register and manage their domain names directly on the blockchain, ensuring transparency, decentralization, and enhanced security.'
+      + 'By leveraging blockchain technology, it offers a seamless and reliable solution for domain name registration, ownership verification, and management, empowering users to take full control of their online presence.',
   },
 ];
 
