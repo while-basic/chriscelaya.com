@@ -59,20 +59,40 @@ const data = [
     subtitle: '2024 - Game Development, Unreal Engine',
     link: 'https://www.instagram.com/p/Ch6W2jMjjnc/',
     image: '/images/projects/unreal-engine.webp',
-    date: '2021-10-01',
+    date: '2023-07-01',
     desc:
-      'In this project, I animated a 3D environment showcasing a small assembly line where coins are meticulously guided down a conveyor belt.'
-      + 'This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
+      ''
+      + '',
   },
   {
     title: '3D Animation',
     subtitle: '2023 - 3D Animation Development, Blender',
     link: 'https://www.instagram.com/p/ChrG4v_jgls/',
     image: '/images/projects/blender.webp',
-    date: '2021-10-01',
+    date: '2023-07-01',
     desc:
-      'In this project, I animated a 3D environment showcasing a small assembly line where coins are meticulously guided down a conveyor belt.'
-      + 'This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
+      ''
+      + '',
+  },
+  {
+    title: 'Unity Game Scene',
+    subtitle: '2023 - Game Development, Unity',
+    link: 'https://www.instagram.com/p/Ch6W2jMjjnc/',
+    image: '/images/projects/unity.webp',
+    date: '2023-10-01',
+    desc:
+      ''
+      + '',
+  },
+  {
+    title: 'Unity Game',
+    subtitle: '2023 - Game Development, Unity',
+    link: 'https://www.instagram.com/p/Cw9D913rtVp/',
+    image: '/images/projects/unity-game.webp',
+    date: '2023-12-01',
+    desc:
+      ''
+      + '',
   },
 ];
 
