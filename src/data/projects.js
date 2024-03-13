@@ -125,6 +125,16 @@ const data = [
       ''
       + '',
   },
+  {
+    title: 'Ensemble',
+    subtitle: '2024 - Artificial Intelligence, LLM',
+    link: '',
+    image: '/images/projects/ensemble.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
 ];
 
 export default data;
