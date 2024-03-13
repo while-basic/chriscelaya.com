@@ -107,8 +107,8 @@ const data = [
   {
     title: 'Gemini Pro Vision',
     subtitle: '2024 - Artificial Intelligence, LLM, Google',
-    link: '',
-    image: '/images/projects/google-gemini.webp',
+    link: 'https://gemini-three-indol.vercel.app/',
+    image: '/images/projects/gemini.webp',
     date: '2024-03-10',
     desc:
       ''
