@@ -114,6 +114,26 @@ const data = [
       ''
       + '',
   },
+  {
+    title: 'Gemini Pro Vision',
+    subtitle: '2024 - Artificial Intelligence, LLM, Google',
+    link: '',
+    image: '/images/projects/google-gemini.webp',
+    date: '2024-03-10',
+    desc:
+      ''
+      + '',
+  },
+  {
+    title: 'Replicate SDXL Image Generation',
+    subtitle: '2024 - Artificial Intelligence, LLM, Replicate',
+    link: '',
+    image: '/images/projects/replicate.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
 ];
 
 export default data;
