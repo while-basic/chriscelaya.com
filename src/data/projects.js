@@ -94,15 +94,15 @@ const data = [
       ''
       + '',
   },
-      {
-        title: 'Amica',
-        subtitle: '2024 - Artificial Intelligence, LLM',
-        link: 'https://www.youtube.com/watch?v=FwmU4v4KL0I',
-        image: '/images/projects/amica.webp',
-        date: '2024-03-12',
-        desc:
-          ''
-          + '',
+  {
+    title: 'Amica',
+    subtitle: '2024 - Artificial Intelligence, LLM',
+    link: 'https://www.youtube.com/watch?v=FwmU4v4KL0I',
+    image: '/images/projects/amica.webp',
+    date: '2024-03-12',
+    desc:
+      ''
+      + '',
   },
   {
     title: 'ChatterSync',
@@ -113,7 +113,7 @@ const data = [
     desc:
       ''
       + '',
-},
+  },
 ];
 
 export default data;
