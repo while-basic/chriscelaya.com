@@ -55,16 +55,6 @@ const data = [
       + ' This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
   },
   {
-    title: 'Unreal Engine Game Scene',
-    subtitle: '2023 - Game Development, Unreal Engine',
-    link: 'https://www.instagram.com/p/Ch6W2jMjjnc/',
-    image: '/images/projects/unreal-engine.webp',
-    date: '2023-07-01',
-    desc:
-      ''
-      + '',
-  },
-  {
     title: '3D Animation',
     subtitle: '2023 - 3D Animation, Blender',
     link: 'https://www.instagram.com/p/ChrG4v_jgls/',
