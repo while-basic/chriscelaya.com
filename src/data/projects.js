@@ -35,7 +35,7 @@ const data = [
   {
     title: 'Blockchain TLD Service',
     subtitle: '2021 - Blockchain Technology',
-    link: 'hhttps://www.youtube.com/watch?v=W3PUwbJamiY',
+    link: 'https://www.youtube.com/watch?v=W3PUwbJamiY',
     image: '/images/projects/top-level.webp',
     date: '2021-10-01',
     desc:
@@ -51,8 +51,8 @@ const data = [
     image: '/images/projects/assembly.webp',
     date: '2021-10-01',
     desc:
-      'In this project, I animated a 3D environment showcasing a small assembly line where coins are meticulously guided down a conveyor belt.'
-      + 'This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
+      'In this project, I animated a 3D environment showcasing a small assembly line where coins are guided down a conveyor belt.'
+      + ' This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
   },
   {
     title: 'Unreal Engine Game Scene',
