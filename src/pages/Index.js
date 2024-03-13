@@ -39,7 +39,7 @@ const Index = () => (
         and pushing the boundaries of what is possible.
       </p>
       <p>
-        Learn more about me at <a href="https://www.chriscelaya.xyz">www.chriscelaya.xyz</a>. I am
+        Learn more about my professional work <a href="https://www.chriscelaya.xyz/resume">www.chriscelaya.xyz</a>. I am
         constantly on the lookout for new challenges and opportunities to apply my skills towards
         the growth and success of forward-thinking organizations.
       </p>

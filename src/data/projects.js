@@ -1,13 +1,14 @@
 const data = [
   {
     title: 'MedChat',
-    subtitle: '2023 - Artificial Intelligence',
-    link: '/',
+    subtitle: '2023 - Large Language Model',
+    link: 'src/data/projects/',
     image: '/images/projects/medchat.webp',
     date: '2023-11-01',
+    info: 'information',
     desc:
       'MedChat is a cutting-edge web application that leverages the power of Llama2, a state-of-the-art large language model, to provide accurate and personalized patient diagnoses.'
-      + 'MedChat\'s user-friendly interface enables seamless interaction with the Llama2 model, streamlining the diagnostic process and reducing the time and effort required for healthcare professionals to evaluate and diagnose patients.',
+      + 'MedChat\'s user interface that enables seamless interaction with the Llama2 model, streamlining the diagnostic process and reducing the time and effort required for healthcare professionals to evaluate and diagnose patients.',
   },
   {
     title: 'MIDI Saber',
