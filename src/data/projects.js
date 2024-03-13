@@ -128,7 +128,7 @@ const data = [
     title: 'Replicate SDXL Image Generation',
     subtitle: '2024 - Artificial Intelligence, LLM, Replicate',
     link: '',
-    image: '/images/projects/replicate.webp',
+    image: '/images/projects/replicate-stable-diffusion.webp',
     date: '2024-03-13',
     desc:
       ''
