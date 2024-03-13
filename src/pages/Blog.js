@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Markdown from 'markdown-to-jsx';
 
 import Main from '../layouts/Main';
@@ -22,13 +22,13 @@ const Blog = () => {
 
   return (
     <Main
-      title="Blog"
+      title="Chris's Blog"
       description="Chris's Blog"
     >
       <article className="post markdown" id="blog">
         <header>
           <div className="title">
-            <h2><Link to="/blog">Blog (Work in progress)</Link></h2>
+            <h2><a href="https://chriscelaya-xyz-tailwind-css-starter-blog.vercel.app/" target="_blank" rel="noopener noreferrer">Blog (Work in progress)</a></h2>
           </div>
         </header>
         <Markdown>
