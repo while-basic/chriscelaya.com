@@ -117,9 +117,19 @@ const data = [
   },
   {
     title: 'Replicate SDXL Image Generation',
-    subtitle: '2024 - Artificial Intelligence, LLM, Replicate',
+    subtitle: '2024 - Generative AI, LLM, Replicate, Streamlit',
     link: '',
     image: '/images/projects/replicate-stable-diffusion.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
+  {
+    title: 'SDXL Image Generator',
+    subtitle: '2024 - Generative AI, LLM, Replicate',
+    link: 'https://replicate-nextjs-omega.vercel.app/',
+    image: '/images/projects/next-sdxl.webp',
     date: '2024-03-13',
     desc:
       ''
@@ -130,6 +140,16 @@ const data = [
     subtitle: '2024 - Artificial Intelligence, LLM',
     link: '',
     image: '/images/projects/ensemble.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
+  {
+    title: 'Natural Language Translator',
+    subtitle: '2024 - Natural Language, LLM',
+    link: '',
+    image: '/images/projects/translator.webp',
     date: '2024-03-13',
     desc:
       ''
