@@ -175,6 +175,16 @@ const data = [
       ''
       + '',
   },
+  {
+    title: 'AI Assistant',
+    subtitle: '2024 - Web Development, LLM',
+    link: 'https://awesome-chatbot-phi.vercel.app/',
+    image: '/images/projects/ai-assistant.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
 ];
 
 export default data;
