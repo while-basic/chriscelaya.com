@@ -29,6 +29,7 @@ const Blog = () => {
         <header>
           <div className="title">
             <h2><a href="https://chriscelaya-xyz-tailwind-css-starter-blog.vercel.app/" target="_blank" rel="noopener noreferrer">Blog (Work in progress)</a></h2>
+            <p>This section is under construction 🚧</p>
           </div>
         </header>
         <Markdown>
