@@ -2,17 +2,16 @@ const data = [
   {
     title: 'MedChat',
     subtitle: '2023 - Large Language Model',
-    link: 'src/data/projects/',
+    link: '',
     image: '/images/projects/medchat.webp',
     date: '2023-11-01',
-    info: 'information',
     desc:
       'MedChat is a cutting-edge web application that leverages the power of Llama2, a state-of-the-art large language model, to provide accurate and personalized patient diagnoses.'
       + 'MedChat\'s user interface that enables seamless interaction with the Llama2 model, streamlining the diagnostic process and reducing the time and effort required for healthcare professionals to evaluate and diagnose patients.',
   },
   {
     title: 'MIDI Saber',
-    subtitle: '2017 - Virtual Reality',
+    subtitle: '2017 - Game Development, Virtual Reality',
     link: 'https://www.youtube.com/watch?v=fW6c3pb60kE',
     image: '/images/projects/midi-saber.webp',
     date: '2015-06-01',
@@ -24,7 +23,7 @@ const data = [
   },
   {
     title: 'Law-GPT',
-    subtitle: '2023 - Artificial Intelligence',
+    subtitle: '2023 - LLM, WatchOS',
     link: 'https://www.youtube.com/watch?v=19iWJPfot6k&t=6s',
     image: '/images/projects/law-gpt.webp',
     date: '2023-06-01',
@@ -147,8 +146,8 @@ const data = [
   },
   {
     title: 'Natural Language Translator',
-    subtitle: '2024 - Natural Language, LLM',
-    link: '',
+    subtitle: '2024 - Natural Language Processing, LLM',
+    link: 'https://ai-code-translator-pied-zeta.vercel.app/',
     image: '/images/projects/translator.webp',
     date: '2024-03-13',
     desc:
@@ -158,7 +157,7 @@ const data = [
   {
     title: 'Twitter Bio Generator',
     subtitle: '2024 - Web Development, LLM',
-    link: '',
+    link: 'https://twitter-bio-theta.vercel.app/',
     image: '/images/projects/twitter.webp',
     date: '2024-03-13',
     desc:
@@ -166,10 +165,10 @@ const data = [
       + '',
   },
   {
-    title: 'AI Agents',
+    title: 'Langchain Agents',
     subtitle: '2024 - Web Development, LLM',
-    link: '',
-    image: '/images/projects/agent.webp',
+    link: 'https://langchain-starter-pearl-chi.vercel.app/',
+    image: '/images/projects/langchain-agent.webp',
     date: '2024-03-13',
     desc:
       ''
