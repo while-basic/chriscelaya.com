@@ -13,7 +13,6 @@ const messages = [
   'you can email literally about anything! ',
   'well, not anything, but most things... ',
   'please work for us ',
-  'help me ',
 ];
 
 const useInterval = (callback, delay) => {
@@ -36,7 +35,7 @@ const useInterval = (callback, delay) => {
 
 const EmailLink = ({ loopMessage }) => {
   const hold = 50; // ticks to wait after message is complete before rendering next message
-  const delay = 25; // tick length in mS
+  const delay = 50; // tick length in mS
 
   const [idx, updateIter] = useState(0); // points to current message
   const [message, updateMessage] = useState(messages[idx]);

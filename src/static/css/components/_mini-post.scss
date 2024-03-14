@@ -47,14 +47,22 @@
   border: solid 1px _palette(border);
   margin: 0 0 _size(element-margin);
 
+  
   .image {
+    margin-top: -50px;
     overflow: hidden;
     width: 100%;
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers the child horizontally */
+    align-items: center; /* Centers the child vertically */
+    overflow: hidden;
 
     img {
-      @include vendor( 'transition', 'transform #{_duration(transition)} ease-out');
-      width: 100%;
-    }
+      @include vendor('transition', 'transform #{_duration(transition)} ease-out');
+      max-width: 100%; /* Ensures image is not larger than its container */
+      height: auto; /* Maintains aspect ratio */
+      @include vendor('transform', 'scale(0.8)'); /* Scales down the image */
+  }
 
     &:hover {
       img {

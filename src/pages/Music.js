@@ -1,43 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Markdown from 'markdown-to-jsx';
-
 import Main from '../layouts/Main';
+import Cell from '../components/Music/Cell';
+import data from '../data/music';
 
-const Music = () => {
-  const [markdown, setMarkdown] = useState('');
+const Projects = () => (
+  <Main
+    title="Music"
+    description="Music"
+  >
+    <article className="post" id="music">
+      <header>
+        <div className="title">
+          <h2><Link to="/projects">Music</Link></h2>
+          <p>A selection of music that I produced and that I am not too ashamed of.</p>
+        </div>
+      </header>
+      {data.map((project) => (
+        <Cell
+          data={project}
+          key={project.title}
+          style={{ width: '100px', height: 'auto' }} // Adjust width as needed, height:auto keeps aspect ratio
+        />
+      ))}
+    </article>
+  </Main>
+);
 
-  useEffect(() => {
-    import('../data/music.md')
-      .then((res) => {
-        fetch(res.default)
-          .then((r) => r.text())
-          .then(setMarkdown);
-      });
-  });
-
-  const count = markdown.split(/\s+/)
-    .map((s) => s.replace(/\W/g, ''))
-    .filter((s) => s.length).length;
-
-  return (
-    <Main
-      title="Music Production"
-      description="Chris's Music Production"
-    >
-      <article className="post markdown" id="music">
-        <header>
-          <div className="title">
-            <h2><Link to="/about">Music Production (Work in progress)</Link></h2>
-          </div>
-        </header>
-        <Markdown>
-          {markdown}
-        </Markdown>
-      </article>
-      <p>(in about {count} words)</p>
-    </Main>
-  );
-};
-
-export default Music;
+export default Projects;
