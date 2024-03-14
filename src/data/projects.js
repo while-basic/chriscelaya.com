@@ -28,7 +28,7 @@ const data = [
     image: '/images/projects/law-gpt.webp',
     date: '2023-06-01',
     desc:
-      'LawGPT is a groundbreaking Apple Watch application that puts legal expertise at your fingertips, powered by the cutting-edge language model from OpenAI. This innovative app is designed to provide users with on-the-go access to accurate and reliable legal information, empowering them to make informed decisions without the immediate need for a lawyer.'
+      'LawGPT is an Apple Watch application that puts legal expertise on your wrist, powered by the cutting-edge language model from OpenAI. This app is designed to provide users with on-the-go access to accurate and reliable legal information, empowering them to make informed decisions without the immediate need for a lawyer.'
       + 'With LawGPT, users can simply speak into their Apple Watch, asking legal questions or seeking guidance on various legal matters. The app seamlessly integrates with OpenAI\'s advanced natural language processing capabilities, allowing it to understand and interpret the user\'s queries with remarkable accuracy.'
       + 'While LawGPT is not a substitute for professional legal counsel, it serves as a valuable resource for individuals seeking quick and reliable legal information on-the-go. Whether you\'re a business professional navigating contractual obligations, a tenant seeking to understand your rights, or simply someone curious about legal matters, LawGPT empowers you with the knowledge you need, right at your wrist.',
   },
@@ -189,6 +189,16 @@ const data = [
     subtitle: '2024 - Web Development, LLM',
     link: 'https://google-gemini-ui-tan.vercel.app/',
     image: '/images/projects/gemini-chat.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
+  {
+    title: 'Custom GPT',
+    subtitle: '2024 - Artificial Intelligence, LLM',
+    link: 'https://chat.openai.com/g/g-6PhyHFmyd-minecraft-coloring-book',
+    image: '/images/projects/custom-gpt.webp',
     date: '2024-03-13',
     desc:
       ''
