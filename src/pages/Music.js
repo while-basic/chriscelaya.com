@@ -20,7 +20,6 @@ const Projects = () => (
         <Cell
           data={project}
           key={project.title}
-          style={{ width: '100px', height: 'auto' }} // Adjust width as needed, height:auto keeps aspect ratio
         />
       ))}
     </article>
