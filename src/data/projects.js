@@ -155,6 +155,26 @@ const data = [
       ''
       + '',
   },
+  {
+    title: 'Twitter Bio Generator',
+    subtitle: '2024 - Web Development, LLM',
+    link: '',
+    image: '/images/projects/twitter.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
+  {
+    title: 'AI Agents',
+    subtitle: '2024 - Web Development, LLM',
+    link: '',
+    image: '/images/projects/agent.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
 ];
 
 export default data;
