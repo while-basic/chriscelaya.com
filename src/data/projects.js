@@ -184,6 +184,16 @@ const data = [
       ''
       + '',
   },
+  {
+    title: 'Gemini Chat',
+    subtitle: '2024 - Web Development, LLM',
+    link: 'https://google-gemini-ui-tan.vercel.app/',
+    image: '/images/projects/gemini-chat.webp',
+    date: '2024-03-13',
+    desc:
+      ''
+      + '',
+  },
 ];
 
 export default data;
