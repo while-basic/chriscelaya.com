@@ -16,9 +16,9 @@ const Blog = () => {
       });
   });
 
-  const count = markdown.split(/\s+/)
-    .map((s) => s.replace(/\W/g, ''))
-    .filter((s) => s.length).length;
+  // const count = markdown.split(/\s+/)
+  //   .map((s) => s.replace(/\W/g, ''))
+  //   .filter((s) => s.length).length;
 
   return (
     <Main
