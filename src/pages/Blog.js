@@ -28,15 +28,15 @@ const Blog = () => {
       <article className="post markdown" id="blog">
         <header>
           <div className="title">
-            <h2><a href="https://chriscelaya-xyz-tailwind-css-starter-blog.vercel.app/" target="_blank" rel="noopener noreferrer">Blog (Work in progress)</a></h2>
-            <p>This section is under construction 🚧</p>
+            <h2><a href="https://chriscelaya-xyz-tailwind-css-starter-blog.vercel.app/" target="_blank" rel="noopener noreferrer">Blog</a></h2>
+            <p>(in about {count} words)</p>
+            <h1>This section is under construction 🚧</h1>
           </div>
         </header>
         <Markdown>
           {markdown}
         </Markdown>
       </article>
-      <p>(in about {count} words)</p>
     </Main>
   );
 };
