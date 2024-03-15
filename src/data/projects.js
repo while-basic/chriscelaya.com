@@ -204,6 +204,16 @@ const data = [
       ''
       + '',
   },
+  {
+    title: 'Groq Chat',
+    subtitle: '2024 - Groq, LLM',
+    link: 'https://groq-chat.streamlit.app/',
+    image: '/images/projects/groq.webp',
+    date: '2024-03-15',
+    desc:
+      ''
+      + '',
+  },
 ];
 
 export default data;
