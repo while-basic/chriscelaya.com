@@ -28,8 +28,9 @@ const Blog = () => {
       <article className="post markdown" id="blog">
         <header>
           <div className="title">
-            <h2><a href="https://chriscelaya-xyz-tailwind-css-starter-blog.vercel.app/" target="_blank" rel="noopener noreferrer">Blog</a></h2>
+            <h2><a href="el-paso-tech-blog.vercel.app" target="_blank" rel="noopener noreferrer">Blog</a></h2>
             <h1>This section is under construction 🚧</h1>
+            <p><a href="el-paso-tech-blog.vercel.app" target="_blank" rel="noopener noreferrer">View blog</a></p>
           </div>
         </header>
         <Markdown>
