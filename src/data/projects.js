@@ -2,7 +2,7 @@ const data = [
   {
     title: 'MedChat',
     subtitle: '2023 - Large Language Model',
-    link: '',
+    link: 'https://chris-celaya-blog.vercel.app/articles/medchat',
     image: '/images/projects/medchat.webp',
     date: '2023-11-01',
     desc:
