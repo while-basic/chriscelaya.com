@@ -24,14 +24,14 @@ const routes = [
     label: 'Contact',
     path: '/contact',
   },
-  {
-    label: 'Blog',
-    path: '/blog',
-  },
-  {
-    label: 'Music',
-    path: '/music',
-  },
+  // {
+  //   label: 'Blog',
+  //   path: '/blog',
+  // },
+  // {
+  //   label: 'Music',
+  //   path: '/music',
+  // },
 ];
 
 export default routes;
