@@ -26,7 +26,7 @@ Ensure you have [node](https://nodejs.org/) >= v16. Optionally, use [nvm](https:
 
     ```bash
     git clone https://github.com/while-basic/chriscelaya.xyz.git
-    cd personal-site
+    cd chriscelaya.xyz
     ```
 
 2. (Optional) Ensure you're on Node v16 or higher:
