@@ -20,33 +20,56 @@
 
 // Font.
 	$font: (
-		family:						('Source Sans Pro', Helvetica, sans-serif),
-		family-fixed:				('Courier New', monospace),
-		family-heading:				('Raleway', Helvetica, sans-serif),
+		family:						('Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif),
+		family-fixed:				('JetBrains Mono', 'Fira Code', 'Consolas', monospace),
+		family-heading:				('Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif),
 		weight:						400,
-		weight-bold:				700,
-		weight-heading:				400,
-		weight-heading-bold:		800,
-		weight-heading-extrabold:	900,
-		kerning-heading:			0.25em
+		weight-bold:				600,
+		weight-heading:				500,
+		weight-heading-bold:		700,
+		weight-heading-extrabold:	800,
+		kerning-heading:			0.01em
 	);
 
 // Palette.
 	$palette: (
-		bg:							#ffffff,
-		bg-alt:						#f4f4f4,
-		fg:							#646464,
-		fg-bold:					#3c3b3b,
-		fg-light:					#aaaaaa,
-		border:						rgba(160,160,160,0.3),
-		border-bg:					rgba(160,160,160,0.075),
-		border-alt:					rgba(160,160,160,0.65),
-		accent:						#2e59ba,
-		primary:					#2e59ba,
-		primary-rgb:				'46, 89, 186',
-		primary-dark:				#234690,
-		text:						#3c3b3b,
-		text-light:				#646464,
-		background:				#ffffff,
-		background-alt:			#f4f4f4
+		// Core colors
+		primary:					#2D5BFF,  // Vibrant blue - main brand color
+		primary-rgb:				'45, 91, 255',
+		primary-dark:				#1E3ECC,  // Darker blue for hover states
+		primary-light:				#6B8AFF,  // Lighter blue for highlights
+		
+		// Background colors
+		bg:							#FFFFFF,  // Pure white
+		bg-alt:						#F8FAFC,  // Very light blue-gray
+		bg-dark:					#1A1F2C,  // Dark blue-gray for dark sections
+		
+		// Text colors
+		text:						#1A1F2C,  // Dark blue-gray for main text
+		text-light:				#64748B,  // Medium gray for secondary text
+		text-lighter:				#94A3B8,  // Lighter gray for tertiary text
+		
+		// Accent colors
+		accent-success:			#10B981,  // Green for success states
+		accent-warning:			#F59E0B,  // Orange for warnings
+		accent-danger:				#EF4444,  // Red for errors/danger
+		accent-info:				#3B82F6,  // Blue for info
+		
+		// Interactive colors
+		hover:						#1E3ECC,  // Darker blue for hover states
+		active:						#1733A0,  // Even darker for active states
+		focus:						rgba(45, 91, 255, 0.4),  // Semi-transparent primary for focus rings
+		
+		// Border colors
+		border:						rgba(203, 213, 225, 0.3),
+		border-bg:					rgba(203, 213, 225, 0.075),
+		border-alt:					rgba(203, 213, 225, 0.65),
+		
+		// Legacy support
+		fg:							#64748B,
+		fg-bold:					#1A1F2C,
+		fg-light:					#94A3B8,
+		accent:						#2D5BFF,
+		background:				#FFFFFF,
+		background-alt:			#F8FAFC
 	);

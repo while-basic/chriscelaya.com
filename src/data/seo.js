@@ -32,7 +32,7 @@ const SEO = {
   og: {
     type: 'website',
     url: 'https://chriscelaya.xyz',
-    image: '/images/og.png', // You'll need to add this image
+    image: '/images/me.jpg', // You'll need to add this image
     imageAlt: 'Christopher Celaya - Systems Integrator & Software Developer',
   },
   twitter: {

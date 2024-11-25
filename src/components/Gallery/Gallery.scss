@@ -236,31 +236,45 @@
 
   .close-button {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
     border: none;
     border-radius: 50%;
-    background: var(--background);
-    color: var(--text);
-    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #e63946;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     z-index: 2;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+    
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      transition: transform 0.3s ease;
+      stroke-width: 2.5;
+    }
     
     &:hover {
-      background: var(--primary);
-      color: var(--background);
-      transform: rotate(90deg);
+      background: #fff;
+      color: #d62828;
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(230, 57, 70, 0.4);
+      
+      svg {
+        transform: rotate(90deg);
+      }
     }
 
     &:focus-visible {
-      outline: 3px solid var(--primary);
+      outline: 3px solid #e63946;
       outline-offset: 2px;
+      background: #fff;
+      color: #d62828;
     }
   }
 
