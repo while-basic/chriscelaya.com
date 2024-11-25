@@ -40,27 +40,91 @@
     }
   }
 
+  .waveform-container {
+    margin: 1rem 0;
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 1rem;
+    
+    .waveform-visualizer {
+      width: 100%;
+      height: 80px;
+    }
+  }
+
   .player-controls {
-    .play-button {
-      background: var(--primary-color);
-      border: none;
-      border-radius: 50%;
-      width: 3rem;
-      height: 3rem;
+    .primary-controls {
       display: flex;
       align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      gap: 1rem;
       margin-bottom: 1rem;
-      transition: transform 0.2s ease;
-      font-size: 1.2rem;
 
-      &:hover {
-        transform: scale(1.05);
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background: var(--background-color);
+        }
+
+        span {
+          font-size: 1.2rem;
+        }
       }
 
-      &.playing {
-        background: var(--accent-color);
+      .play-button {
+        background: var(--primary-color);
+        width: 3rem;
+        height: 3rem;
+
+        &:hover {
+          transform: scale(1.05);
+          background: var(--primary-color);
+        }
+
+        &.playing {
+          background: var(--accent-color);
+        }
+
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    .volume-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+      max-width: 100px;
+
+      .volume-slider {
+        width: 100%;
+        height: 4px;
+      }
+    }
+
+    .playback-rate {
+      select {
+        background: var(--background-color);
+        border: none;
+        padding: 0.3rem 0.6rem;
+        border-radius: 4px;
+        color: var(--text-color);
+        font-size: 0.9rem;
+        cursor: pointer;
+
+        &:hover {
+          background: var(--background-color-alt);
+        }
       }
     }
 
@@ -102,21 +166,100 @@
   }
 }
 
-// Add responsive styles
+.track-filters {
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .search-container {
+    flex: 1;
+    min-width: 250px;
+
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--background-color);
+      color: var(--font-color);
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: var(--link-color);
+      }
+
+      &::placeholder {
+        color: var(--font-color-secondary);
+      }
+    }
+  }
+
+  .genre-filter {
+    min-width: 200px;
+
+    .genre-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--background-color);
+      color: var(--font-color);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: var(--link-color);
+      }
+
+      option {
+        background-color: var(--background-color);
+        color: var(--font-color);
+      }
+    }
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: var(--font-color-secondary);
+  font-style: italic;
+}
+
+// Hide screen reader only text
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Responsive styles
 @media screen and (max-width: 768px) {
   .audio-player {
     padding: 1rem;
 
-    .track-info {
-      h4 {
-        font-size: 1.2rem;
-      }
-    }
-
     .player-controls {
-      .play-button {
-        width: 2.5rem;
-        height: 2.5rem;
+      .primary-controls {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        .play-button {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
       }
     }
   }
