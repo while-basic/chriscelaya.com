@@ -44,7 +44,7 @@
 
   .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 
@@ -52,10 +52,21 @@
       background: #f8f8f8;
       padding: 2rem;
       border-radius: 8px;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
 
-      &:hover {
+      &:hover, &.active {
         transform: translateY(-5px);
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+        .learn-more {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       h3 {
@@ -67,6 +78,18 @@
       p {
         color: #666;
         line-height: 1.5;
+        margin-bottom: 2rem;
+      }
+
+      .learn-more {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 2rem;
+        color: #000;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
       }
     }
   }
@@ -83,6 +106,19 @@
   p {
     font-size: 1.1rem;
     line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .read-more {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateX(5px);
+    }
   }
 }
 
@@ -105,20 +141,37 @@
 
   .cta-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
 
     .button {
       display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background: #000;
-      color: #fff;
+      padding: 0.8rem 1.8rem;
       text-decoration: none;
       border-radius: 4px;
-      transition: background-color 0.3s ease;
+      font-weight: 500;
+      transition: all 0.3s ease;
 
-      &:hover {
-        background: #333;
+      &.primary {
+        background: #000;
+        color: #fff;
+
+        &:hover {
+          background: #333;
+          transform: translateY(-2px);
+        }
+      }
+
+      &.secondary {
+        background: #fff;
+        color: #000;
+        border: 2px solid #000;
+
+        &:hover {
+          background: #000;
+          color: #fff;
+          transform: translateY(-2px);
+        }
       }
     }
   }
@@ -136,14 +189,14 @@
 
   .cta-section {
     padding: 2rem 1rem;
-  }
 
-  .cta-buttons {
-    flex-direction: column;
-    
-    .button {
-      width: 100%;
-      margin-bottom: 1rem;
+    .cta-buttons {
+      flex-direction: column;
+      
+      .button {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
     }
   }
 }
