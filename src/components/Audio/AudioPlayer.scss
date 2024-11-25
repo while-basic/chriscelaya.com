@@ -1,10 +1,5 @@
 @import '../../static/css/libs/vars';
 
-// Convert hex to rgb function
-// @function hexToRGB($hex) {
-//   @return red($hex), green($hex), blue($hex);
-// }
-
 .audio-player {
   background: map-get($palette, background);
   border: 1px solid map-get($palette, border);
@@ -57,11 +52,6 @@
         border-radius: 20px;
         font-weight: 500;
         letter-spacing: 0.02em;
-        transition: all 0.2s ease;
-
-        &:hover {
-          background: transparentize(map-get($palette, primary), 0.85);
-        }
       }
     }
   }
@@ -73,6 +63,7 @@
     padding: 1.25rem;
     height: 100px;
     transition: all 0.2s ease;
+    cursor: pointer;
 
     &:hover {
       background: map-get($palette, background-alt);
@@ -81,126 +72,30 @@
   }
 
   .player-controls {
-    .primary-controls {
+    display: flex;
+    justify-content: center;
+    
+    .play-button {
+      background: map-get($palette, primary);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 1.25rem;
-      padding: 0.5rem 0;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.2rem;
+      color: map-get($palette, background);
 
-      .play-button {
-        background: map-get($palette, primary);
-        border: none;
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-size: 1.2rem;
-        color: map-get($palette, background);
-
-        &:hover {
-          background: map-get($palette, primary-dark);
-          transform: scale(1.05);
-        }
-
-        &:active {
-          transform: scale(0.98);
-        }
+      &:hover {
+        background: map-get($palette, primary-dark);
+        transform: scale(1.05);
       }
 
-      .volume-control {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        background: map-get($palette, background-alt);
-        padding: 0.5rem 1rem;
-        border-radius: 24px;
-        transition: all 0.2s ease;
-
-        &:hover {
-          background: map-get($palette, background-alt);
-          opacity: 0.9;
-        }
-
-        .mute-button {
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 0.5rem;
-          font-size: 1.2rem;
-          opacity: 0.8;
-          transition: opacity 0.2s;
-
-          &:hover {
-            opacity: 1;
-          }
-        }
-
-        .volume-slider {
-          width: 100px;
-        }
-      }
-
-      .playback-rate {
-        .playback-rate-select {
-          padding: 0.5rem 1rem;
-          border: 1px solid map-get($palette, border);
-          border-radius: 20px;
-          background: map-get($palette, background);
-          color: map-get($palette, text);
-          font-size: 0.9rem;
-          cursor: pointer;
-          transition: all 0.2s ease;
-
-          &:hover {
-            border-color: map-get($palette, primary);
-            background: map-get($palette, background);
-            opacity: 0.9;
-          }
-
-          option {
-            background: map-get($palette, background);
-            color: map-get($palette, text);
-            padding: 0.5rem;
-          }
-        }
-      }
-
-      .share-button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        font-size: 1.2rem;
-        opacity: 0.8;
-        transition: all 0.2s ease;
-
-        &:hover {
-          opacity: 1;
-          transform: scale(1.1);
-        }
-      }
-    }
-
-    .progress-bar {
-      padding: 0 0.5rem;
-
-      .seek-slider {
-        width: 100%;
-        margin-bottom: 0.75rem;
-      }
-
-      .time-display {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.9rem;
-        color: map-get($palette, text-light);
-        opacity: 0.8;
-        padding: 0 0.25rem;
+      &:active {
+        transform: scale(0.98);
       }
     }
   }
