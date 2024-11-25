@@ -9,45 +9,25 @@ const AudioProduction = () => {
 
   const tracks = [
     {
-      id: 'electronic-fusion-01',
-      title: 'Electronic Fusion',
-      artist: 'Christopher Celaya',
+      id: '80s-hip-hop-r&b-01',
+      title: 'Hip-Hop, R&B',
+      artist: 'C-Cell',
       url: '/audio/Home.mp3',
-      captionsUrl: '/audio/captions/electronic-fusion.vtt',
-      description: 'A fusion of electronic and acoustic elements with ambient textures',
-      genre: 'Electronic/Ambient',
-      year: '2023',
+      // captionsUrl: '/audio/captions/electronic-fusion.vtt',
+      description: 'A fusion of synthwave, hip-hop, and R&B elements with ambient textures',
+      genre: 'Hip-Hop/R&B',
+      year: '2024',
     },
-    {
-      id: 'industrial-rhythm-02',
-      title: 'Industrial Rhythm',
-      artist: 'Christopher Celaya',
-      url: '/audio/industrial-rhythm.mp3',
-      captionsUrl: '/audio/captions/industrial-rhythm.vtt',
-      description: 'Heavy industrial beats mixed with synthesized melodies',
-      genre: 'Industrial/Electronic',
-      year: '2023',
-    },
-    {
-      id: 'ambient-space-03',
-      title: 'Ambient Space',
-      artist: 'Christopher Celaya',
-      url: '/audio/ambient-space.mp3',
-      captionsUrl: '/audio/captions/ambient-space.vtt',
-      description: 'Atmospheric soundscapes with deep space vibes',
-      genre: 'Ambient',
-      year: '2023',
-    },
-    {
-      id: 'tech-house-04',
-      title: 'Tech House Journey',
-      artist: 'Christopher Celaya',
-      url: '/audio/tech-house.mp3',
-      captionsUrl: '/audio/captions/tech-house.vtt',
-      description: 'Driving tech house rhythms with progressive elements',
-      genre: 'Tech House',
-      year: '2023',
-    },
+    // {
+    //   id: '80s-hip-hop-r&b-01',
+    //   title: 'Hip-Hop, R&B',
+    //   artist: 'C-Cell',
+    //   url: '/audio/Home.mp3',
+    //   // captionsUrl: '/audio/captions/electronic-fusion.vtt',
+    //   description: 'A fusion of synthwave, hip-hop, and R&B elements with ambient textures',
+    //   genre: 'Hip-Hop/R&B',
+    //   year: '2024',
+    // },
   ];
 
   const genres = useMemo(() => {
@@ -71,7 +51,7 @@ const AudioProduction = () => {
       description="Audio engineering and music production portfolio showcasing my work in sound design, mixing, and production."
     >
       <Helmet>
-        <title>Audio Production | Christopher Celaya</title>
+        <title>Audio Production | C-Cell</title>
         <meta name="description" content="Audio engineering and music production portfolio" />
       </Helmet>
 
@@ -80,7 +60,7 @@ const AudioProduction = () => {
           <div className="title">
             <h1>Audio Production</h1>
             <p className="subtitle" role="doc-subtitle">
-              A collection of my audio engineering and music production work
+              A collection of my audio engineering and music production work.
             </p>
           </div>
         </header>
@@ -149,7 +129,7 @@ const AudioProduction = () => {
               <div>
                 <h3>Digital Audio Workstations</h3>
                 <ul>
-                  <li>Ableton Live 11 Suite</li>
+                  <li>Ableton Live 12 Suite</li>
                   <li>Logic Pro X</li>
                   <li>Pro Tools</li>
                 </ul>
@@ -157,16 +137,15 @@ const AudioProduction = () => {
               <div>
                 <h3>Audio Interfaces</h3>
                 <ul>
-                  <li>Universal Audio Apollo Twin X</li>
-                  <li>Focusrite Scarlett 18i20</li>
+                  <li>Universal Audio Volt 2</li>
+                  <li>Focusrite Scarlett 2i2</li>
                 </ul>
               </div>
               <div>
                 <h3>Monitoring</h3>
                 <ul>
                   <li>Adam Audio A7X</li>
-                  <li>Sennheiser HD650</li>
-                  <li>Audio-Technica ATH-M50x</li>
+                  <li>Beyerdynamic DT 990 Pro</li>
                 </ul>
               </div>
               <div>

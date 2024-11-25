@@ -1,109 +1,172 @@
+@import '../../static/css/libs/vars';
+
+// Convert hex to rgb function
+// @function hexToRGB($hex) {
+//   @return red($hex), green($hex), blue($hex);
+// }
+
 .audio-player {
-  background: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.5rem;
+  background: map-get($palette, background);
+  border: 1px solid map-get($palette, border);
+  border-radius: 16px;
+  padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  }
 
   .track-info {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     h4 {
-      margin: 0 0 0.5rem;
-      font-size: 1.25rem;
-      color: var(--text-color);
+      margin: 0 0 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: map-get($palette, text);
+      letter-spacing: -0.02em;
     }
 
     .artist {
-      color: var(--text-color-light);
-      margin: 0 0 0.5rem;
-      font-size: 1rem;
+      color: map-get($palette, text-light);
+      margin: 0 0 0.75rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
     }
 
     .description {
-      color: var(--text-color-light);
-      margin: 0 0 1rem;
-      font-size: 0.9rem;
-      line-height: 1.4;
+      color: map-get($palette, text-light);
+      margin: 0 0 1.25rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.8;
     }
 
     .metadata {
       display: flex;
       gap: 1rem;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
 
       span {
-        color: var(--text-color-light);
-        background: var(--background-color-alt);
-        padding: 0.25rem 0.75rem;
-        border-radius: 12px;
+        color: map-get($palette, text-light);
+        background: transparentize(map-get($palette, primary), 0.9);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: transparentize(map-get($palette, primary), 0.85);
+        }
       }
     }
   }
 
   .waveform-container {
-    margin-bottom: 1rem;
-    background: var(--background-color-alt);
-    border-radius: 4px;
-    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: map-get($palette, background-alt);
+    border-radius: 12px;
+    padding: 1.25rem;
     height: 100px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: map-get($palette, background-alt);
+      opacity: 0.95;
+    }
   }
 
   .player-controls {
     .primary-controls {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+      padding: 0.5rem 0;
 
       .play-button {
-        background: var(--primary-color);
+        background: map-get($palette, primary);
         border: none;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        transition: background-color 0.2s;
+        transition: all 0.2s ease;
+        font-size: 1.2rem;
+        color: map-get($palette, background);
 
         &:hover {
-          background: var(--primary-color-dark);
+          background: map-get($palette, primary-dark);
+          transform: scale(1.05);
         }
 
-        &.playing {
-          background: var(--accent-color);
+        &:active {
+          transform: scale(0.98);
         }
       }
 
       .volume-control {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
+        background: map-get($palette, background-alt);
+        padding: 0.5rem 1rem;
+        border-radius: 24px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: map-get($palette, background-alt);
+          opacity: 0.9;
+        }
 
         .mute-button {
           background: none;
           border: none;
           cursor: pointer;
-          padding: 0.25rem;
+          padding: 0.5rem;
           font-size: 1.2rem;
+          opacity: 0.8;
+          transition: opacity 0.2s;
+
+          &:hover {
+            opacity: 1;
+          }
         }
 
         .volume-slider {
-          width: 80px;
+          width: 100px;
         }
       }
 
       .playback-rate {
         .playback-rate-select {
-          padding: 0.25rem 0.5rem;
-          border: 1px solid var(--border-color);
-          border-radius: 4px;
-          background: var(--background-color);
-          color: var(--text-color);
+          padding: 0.5rem 1rem;
+          border: 1px solid map-get($palette, border);
+          border-radius: 20px;
+          background: map-get($palette, background);
+          color: map-get($palette, text);
+          font-size: 0.9rem;
           cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            border-color: map-get($palette, primary);
+            background: map-get($palette, background);
+            opacity: 0.9;
+          }
+
+          option {
+            background: map-get($palette, background);
+            color: map-get($palette, text);
+            padding: 0.5rem;
+          }
         }
       }
 
@@ -111,28 +174,33 @@
         background: none;
         border: none;
         cursor: pointer;
-        padding: 0.25rem;
+        padding: 0.5rem;
         font-size: 1.2rem;
         opacity: 0.8;
-        transition: opacity 0.2s;
+        transition: all 0.2s ease;
 
         &:hover {
           opacity: 1;
+          transform: scale(1.1);
         }
       }
     }
 
     .progress-bar {
+      padding: 0 0.5rem;
+
       .seek-slider {
         width: 100%;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
       }
 
       .time-display {
         display: flex;
         justify-content: space-between;
-        font-size: 0.85rem;
-        color: var(--text-color-light);
+        font-size: 0.9rem;
+        color: map-get($palette, text-light);
+        opacity: 0.8;
+        padding: 0 0.25rem;
       }
     }
   }
@@ -153,20 +221,20 @@
     .search-input {
       width: 100%;
       padding: 0.75rem 1rem;
-      border: 1px solid var(--border-color);
+      border: 1px solid map-get($palette, border);
       border-radius: 4px;
-      background-color: var(--background-color);
-      color: var(--font-color);
+      background-color: map-get($palette, background);
+      color: map-get($palette, text);
       font-size: 1rem;
       transition: border-color 0.3s ease;
 
       &:focus {
         outline: none;
-        border-color: var(--link-color);
+        border-color: map-get($palette, primary);
       }
 
       &::placeholder {
-        color: var(--font-color-secondary);
+        color: map-get($palette, text-light);
       }
     }
   }
@@ -177,22 +245,22 @@
     .genre-select {
       width: 100%;
       padding: 0.75rem 1rem;
-      border: 1px solid var(--border-color);
+      border: 1px solid map-get($palette, border);
       border-radius: 4px;
-      background-color: var(--background-color);
-      color: var(--font-color);
+      background-color: map-get($palette, background);
+      color: map-get($palette, text);
       font-size: 1rem;
       cursor: pointer;
       transition: border-color 0.3s ease;
 
       &:focus {
         outline: none;
-        border-color: var(--link-color);
+        border-color: map-get($palette, primary);
       }
 
       option {
-        background-color: var(--background-color);
-        color: var(--font-color);
+        background-color: map-get($palette, background);
+        color: map-get($palette, text);
       }
     }
   }
@@ -201,11 +269,53 @@
 .no-results {
   text-align: center;
   padding: 2rem;
-  color: var(--font-color-secondary);
+  color: map-get($palette, text-light);
   font-style: italic;
 }
 
-// Hide screen reader only text
+// Modern styling for range inputs
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 6px;
+  
+  &::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, map-get($palette, primary) var(--value-percent, 0%), map-get($palette, border) var(--value-percent, 0%));
+    height: 6px;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+  }
+  
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: map-get($palette, primary);
+    border: 2px solid map-get($palette, background);
+    border-radius: 50%;
+    margin-top: -5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+  
+  &:hover::-webkit-slider-thumb {
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:focus {
+    outline: none;
+    
+    &::-webkit-slider-thumb {
+      background: map-get($palette, primary);
+      opacity: 0.9;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Screen reader only text
 .sr-only {
   position: absolute;
   width: 1px;
@@ -218,49 +328,35 @@
   border: 0;
 }
 
-// Styling for range inputs
-input[type="range"] {
-  -webkit-appearance: none;
-  background: transparent;
-  
-  &::-webkit-slider-runnable-track {
-    background: var(--border-color);
-    height: 4px;
-    border-radius: 2px;
-  }
-  
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 12px;
-    height: 12px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    margin-top: -4px;
-    cursor: pointer;
-  }
-  
-  &:focus {
-    outline: none;
-    
-    &::-webkit-slider-thumb {
-      background: var(--primary-color-dark);
-    }
-  }
-}
-
 // Responsive styles
 @media screen and (max-width: 768px) {
   .audio-player {
-    padding: 1rem;
+    padding: 1.5rem;
+
+    .track-info {
+      margin-bottom: 1.5rem;
+
+      h4 {
+        font-size: 1.25rem;
+      }
+    }
 
     .player-controls {
       .primary-controls {
         flex-wrap: wrap;
-        gap: 0.5rem;
+        gap: 1rem;
 
-        .play-button {
-          width: 2.5rem;
-          height: 2.5rem;
+        .volume-control {
+          flex: 1;
+          min-width: 150px;
+        }
+
+        .playback-rate {
+          width: 100%;
+          
+          .playback-rate-select {
+            width: 100%;
+          }
         }
       }
     }
