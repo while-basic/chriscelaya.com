@@ -117,30 +117,44 @@
 
 // Individual blog post styles
 #blog-post {
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+  }
 
   .title {
     text-align: center;
     margin-bottom: 2rem;
+    word-wrap: break-word;
 
     h1 {
       margin-bottom: 1rem;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
     }
 
     .blog-meta {
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .tags {
       justify-content: center;
+      flex-wrap: wrap;
     }
   }
 
   .blog-content {
     line-height: 1.8;
     font-size: 1.1rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
 
     h2 {
       margin: 2rem 0 1rem;
@@ -153,12 +167,15 @@
     ul, ol {
       margin-bottom: 1.5rem;
       padding-left: 1.5rem;
+      list-style-position: inside;
     }
 
     img {
       max-width: 100%;
+      height: auto;
       border-radius: 8px;
-      margin: 2rem 0;
+      margin: 2rem auto;
+      display: block;
     }
 
     code {
@@ -166,19 +183,44 @@
       padding: 0.2rem 0.4rem;
       border-radius: 4px;
       font-size: 0.9em;
+      white-space: normal;
+      word-wrap: break-word;
     }
 
     pre {
       background: var(--background-color-alt);
       padding: 1rem;
       border-radius: 8px;
-      overflow-x: auto;
       margin: 1.5rem 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
 
       code {
         background: none;
         padding: 0;
+        white-space: inherit;
       }
+    }
+
+    table {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1.5rem;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 0.5rem;
+        border: 1px solid var(--border-color);
+        word-break: break-word;
+      }
+    }
+
+    blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid var(--primary-color);
+      background: var(--background-color-alt);
+      font-style: italic;
     }
   }
 
@@ -211,9 +253,5 @@
 
   .blog-grid {
     grid-template-columns: 1fr;
-  }
-
-  #blog-post {
-    padding: 1rem;
   }
 }
