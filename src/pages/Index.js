@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Main from '../layouts/Main';
+import SEO from '../components/Template/SEO';
 
 const Index = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -34,6 +35,7 @@ const Index = () => {
     <Main
       description="Christopher Celaya - Systems Integrator and Software Developer based in El Paso, TX"
     >
+      <SEO />
       <article className="post" id="index">
         <header className="major">
           <div className="title">

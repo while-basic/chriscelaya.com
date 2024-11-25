@@ -1,2 +1,22 @@
+# www.robotstxt.org/
+
+# Allow all crawlers
 User-agent: *
-Disallow: /api
+Allow: /
+Disallow: /api/
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*
+
+# Allow Google Images to index images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Sitemap location
+Sitemap: https://chriscelaya.xyz/sitemap.xml
