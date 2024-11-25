@@ -13,7 +13,16 @@ module.exports = {
   ],
   parser: '@babel/eslint-parser',
   plugins: ['react'],
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx'],
+      },
+    },
+  },
   rules: {
+    'import/no-extraneous-dependencies': 'off',
     'jsx-a11y/anchor-is-valid': ['error', {
       aspects: ['noHref', 'invalidHref', 'preferButton'],
       components: ['Link'],
