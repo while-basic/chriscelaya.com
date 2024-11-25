@@ -1,34 +1,119 @@
 @import '../libs/vars';
 
-.audio-portfolio {
-  .tracks-section,
-  .plugins-section {
+.audio-production {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  header {
+    text-align: center;
     margin-bottom: 3rem;
 
-    h2 {
-      font-size: 2rem;
+    .title {
+      font-size: 2.5rem;
+      color: var(--primary);
       margin-bottom: 1rem;
-      color: map-get($palette, text);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
     }
   }
 
-  .section-intro {
-    color: map-get($palette, text-light);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    max-width: 800px;
+  section {
+    margin-bottom: 4rem;
+
+    h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-intro {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
   }
 
   .tracks-container {
     display: grid;
     gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    .track-card {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+
+      .track-details {
+        padding: 1rem;
+
+        .description {
+          color: var(--text-secondary);
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+          line-height: 1.5;
+        }
+
+        .metadata {
+          display: flex;
+          gap: 1rem;
+          font-size: 0.8rem;
+
+          span {
+            background: rgba(var(--primary-rgb), 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+          }
+        }
+      }
+    }
   }
 
-  .plugins-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .plugins-section {
+    .plugins-container {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 768px) {
+  .audio-production {
+    padding: 1rem;
+
+    header {
+      .title {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    section {
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .tracks-container {
+      grid-template-columns: 1fr;
+    }
+
+    .plugins-section {
+      .plugins-container {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 }

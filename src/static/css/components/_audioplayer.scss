@@ -22,6 +22,23 @@
     }
   }
 
+  .waveform-container {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    
+    .waveform-visualizer {
+      width: 100%;
+      cursor: pointer;
+
+      wave {
+        overflow: hidden;
+        border-radius: 4px;
+      }
+    }
+  }
+
   .controls {
     display: flex;
     align-items: center;
@@ -126,6 +143,15 @@
           }
         }
       }
+    }
+  }
+
+  // Dark mode adjustments
+  @media (prefers-color-scheme: dark) {
+    background: rgba(0, 0, 0, 0.2);
+
+    .waveform-container {
+      background: rgba(255, 255, 255, 0.05);
     }
   }
 }

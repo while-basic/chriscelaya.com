@@ -1,8 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPlay,
+  faPause,
+  faVolumeUp,
+  faVolumeMute,
+} from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
+import WaveformVisualizer from './WaveformVisualizer';
 
 const AudioPlayer = ({ track }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -14,6 +20,11 @@ const AudioPlayer = ({ track }) => {
   const audioRef = useRef(null);
   const progressBarRef = useRef(null);
 
+  const updateProgress = () => {
+    const audio = audioRef.current;
+    setCurrentTime(audio.currentTime);
+  };
+
   useEffect(() => {
     const audio = audioRef.current;
     audio.addEventListener('loadedmetadata', () => setDuration(audio.duration));
@@ -23,11 +34,6 @@ const AudioPlayer = ({ track }) => {
       audio.removeEventListener('timeupdate', updateProgress);
     };
   }, []);
-
-  const updateProgress = () => {
-    const audio = audioRef.current;
-    setCurrentTime(audio.currentTime);
-  };
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
@@ -68,17 +74,36 @@ const AudioPlayer = ({ track }) => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleProgressClick(e);
+    }
+  };
+
   return (
-    <motion.div 
+    <motion.div
       className="audio-player"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <audio ref={audioRef} src={track.url} />
-      
+      <audio
+        ref={audioRef}
+        src={track.url}
+        aria-label={`Audio track: ${track.title} by ${track.artist}`}
+      >
+        <track
+          kind="captions"
+          src=""
+          label="English captions"
+          srcLang="en"
+          default
+        />
+      </audio>
+
       <div className="track-info">
-        <motion.h3 
+        <motion.h3
           whileHover={{ scale: 1.05 }}
           className="track-title"
         >
@@ -87,22 +112,40 @@ const AudioPlayer = ({ track }) => {
         <p className="track-artist">{track.artist}</p>
       </div>
 
+      <div className="waveform-container">
+        <WaveformVisualizer
+          audioUrl={track.url}
+          isPlaying={isPlaying}
+          onPlayPause={togglePlay}
+        />
+      </div>
+
       <div className="controls">
         <motion.button
+          type="button"
           whileTap={{ scale: 0.95 }}
           className="play-button"
           onClick={togglePlay}
+          aria-label={isPlaying ? 'Pause' : 'Play'}
         >
           <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
         </motion.button>
 
         <div className="progress-container">
-          <div 
+          <div
             ref={progressBarRef}
             className="progress-bar"
             onClick={handleProgressClick}
+            onKeyPress={handleKeyPress}
+            role="slider"
+            tabIndex={0}
+            aria-label="Audio progress"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round((currentTime / duration) * 100) || 0}
+            aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
           >
-            <div 
+            <div
               className="progress"
               style={{ width: `${(currentTime / duration) * 100}%` }}
             />
@@ -114,7 +157,12 @@ const AudioPlayer = ({ track }) => {
         </div>
 
         <div className="volume-controls">
-          <button className="mute-button" onClick={toggleMute}>
+          <button
+            type="button"
+            className="mute-button"
+            onClick={toggleMute}
+            aria-label={isMuted ? 'Unmute' : 'Mute'}
+          >
             <FontAwesomeIcon icon={isMuted ? faVolumeMute : faVolumeUp} />
           </button>
           <input
@@ -125,6 +173,7 @@ const AudioPlayer = ({ track }) => {
             value={isMuted ? 0 : volume}
             onChange={handleVolumeChange}
             className="volume-slider"
+            aria-label="Volume control"
           />
         </div>
       </div>
