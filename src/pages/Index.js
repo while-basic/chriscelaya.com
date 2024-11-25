@@ -90,9 +90,12 @@ const Index = () => {
         <section className="intro-section" aria-label="Introduction">
           <h2>Welcome to My Digital Space</h2>
           <p>
-            Based in El Paso, Texas, I&apos;m a systems integrator and software developer with a
-            passion for bridging the gap between industrial technology and modern software
-            solutions. My expertise spans across computer science, artificial intelligence, and
+            Based in El Paso, Texas, I&apos;m a mechatronics technician, software
+            developer and audio engineer with a passion for bridging the gap
+            between industrial technology and modern software solutions.
+          </p>
+          <p>
+            My expertise spans across computer science, audio production, and
             mechatronics, allowing me to create innovative solutions for complex technical
             challenges.
           </p>
@@ -123,10 +126,11 @@ const Index = () => {
         <section className="background-section" aria-label="Professional Background">
           <h2>Professional Journey</h2>
           <p>
-            My path in technology has been driven by curiosity and a desire to understand how
-            things work. From my role as a Data Center Technician at T5 Data Centers to working as
-            a Mechatronics Technician at CN Wire, I&apos;ve consistently pushed the boundaries of
-            what&apos;s possible in industrial technology and software integration.
+            My path in technology has been driven by curiosity and a desire to
+            understand how things work. From my role as a Data Center Technician
+            at T5 Data Centers to working as a Mechatronics Technician at CN
+            Wire, I&apos;ve consistently pushed the boundaries of what&apos;s
+            possible in industrial technology and software integration.
           </p>
           <Link to="/resume" className="read-more" aria-label="View my full professional background">
             View Full Background →
@@ -136,9 +140,9 @@ const Index = () => {
         <section className="cta-section" aria-label="Contact Information">
           <h2>Let&apos;s Connect</h2>
           <p>
-            I&apos;m always excited to take on new challenges and contribute to innovative
-            projects. Whether you&apos;re interested in my work or looking to collaborate,
-            I&apos;d love to hear from you.
+            I&apos;m always excited to take on new challenges and contribute to
+            innovative projects. Whether you&apos;re interested in my work or
+            looking to collaborate, I&apos;d love to hear from you.
           </p>
           <div className="cta-buttons" role="group" aria-label="Call to action">
             <Link to="/resume" className="button primary" aria-label="View my detailed resume">
