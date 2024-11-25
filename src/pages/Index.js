@@ -3,54 +3,81 @@ import { Link } from 'react-router-dom';
 import Main from '../layouts/Main';
 
 const Index = () => (
-  <Main description="Christopher Celaya's personal website. El Paso based">
+  <Main
+    description="Christopher Celaya - Systems Integrator and Software Developer based in El Paso, TX"
+  >
     <article className="post" id="index">
-      <header>
+      <header className="major">
         <div className="title">
-          <h2>
-            <Link to="/">About Myself</Link>
-          </h2>
-          <p> </p>
+          <h1>
+            Hi, I&apos;m Christopher Celaya
+          </h1>
+          <div className="subtitle">
+            Systems Integrator | Software Developer | Tech Enthusiast
+          </div>
         </div>
       </header>
-      <p>
-        I am Christopher Celaya, a results-driven and innovative systems
-        integrator deeply immersed in computer science, artificial intelligence,
-        and mechatronics. Based in the city of El Paso, Texas, I have dedicated
-        my career to blending the meticulous world of software development with
-        the dynamic realm of industrial technology. With extensive experience
-        under my belt, I have had the privilege of contributing to cutting-edge
-        projects and tackling challenging roles, from a Data Center Technician
-        at T5 Data Centers to a hands-on Mechatronics Technician at CN Wire.
-      </p>
-      <p>
-        My journey in technology began with a passion for understanding how
-        things work, leading me to explore various fields of engineering and
-        programming. I have attended courses in Electronics Engineering
-        Technology and dabbled in Electrical Engineering & Computer Science,
-        always eager to expand my knowledge and apply it to real-world
-        challenges. Whether it is developing software solutions or maintaining
-        and repairing industrial machinery, my goal has always been to enhance
-        efficiency, reliability, and safety in every project I undertake.
-      </p>
-      <p>
-        As a self-taught programmer proficient in languages like C, Python, and
-        JavaScript, I have developed a knack for creating innovative solutions
-        that bridge the gap between digital and physical worlds. My hands-on
-        experience with pneumatic, hydraulic, water, and electrical systems has
-        equipped me with a versatile skill set, enabling me to manage and
-        maintain complex systems with ease. Beyond technical skills, I value
-        communication, collaboration, and creativity, believing that these
-        qualities are essential in driving projects to success and pushing the
-        boundaries of what is possible.
-      </p>
-      <p>
-        Learn more about my professional work{' '}
-        <a href="https://www.chriscelaya.xyz/resume">www.chriscelaya.xyz</a>. I
-        am constantly on the lookout for new challenges and opportunities to
-        apply my skills towards the growth and success of forward-thinking
-        organizations.
-      </p>
+
+      <section className="intro-section">
+        <h2>Welcome to My Digital Space</h2>
+        <p>
+          Based in El Paso, Texas, I&apos;m a systems integrator and software developer with a
+          passion for bridging the gap between industrial technology and modern software
+          solutions. My expertise spans across computer science, artificial intelligence, and
+          mechatronics, allowing me to create innovative solutions for complex technical
+          challenges.
+        </p>
+      </section>
+
+      <section className="expertise-section">
+        <h2>What I Do</h2>
+        <div className="expertise-grid">
+          <div className="expertise-item">
+            <h3>Systems Integration</h3>
+            <p>
+              Specializing in connecting disparate systems, from industrial machinery to modern
+              software platforms, ensuring seamless operation and optimal performance.
+            </p>
+          </div>
+          <div className="expertise-item">
+            <h3>Software Development</h3>
+            <p>
+              Self-taught programmer proficient in C, Python, and JavaScript, creating efficient
+              solutions that solve real-world problems.
+            </p>
+          </div>
+          <div className="expertise-item">
+            <h3>Industrial Technology</h3>
+            <p>
+              Experienced in maintaining and optimizing pneumatic, hydraulic, water, and
+              electrical systems, bringing reliability to complex industrial operations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="background-section">
+        <h2>Professional Journey</h2>
+        <p>
+          My path in technology has been driven by curiosity and a desire to understand how
+          things work. From my role as a Data Center Technician at T5 Data Centers to working as
+          a Mechatronics Technician at CN Wire, I&apos;ve consistently pushed the boundaries of
+          what&apos;s possible in industrial technology and software integration.
+        </p>
+      </section>
+
+      <section className="cta-section">
+        <h2>Let&apos;s Connect</h2>
+        <p>
+          I&apos;m always excited to take on new challenges and contribute to innovative
+          projects. Whether you&apos;re interested in my work or looking to collaborate, I&apos;d
+          love to hear from you.
+        </p>
+        <div className="cta-buttons">
+          <Link to="/resume" className="button">View My Resume</Link>
+          <Link to="/contact" className="button">Get in Touch</Link>
+        </div>
+      </section>
     </article>
   </Main>
 );

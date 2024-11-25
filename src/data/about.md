@@ -8,7 +8,7 @@ With over 11 years of experience troubleshooting complex electromechanical syste
 
 # Objective
 
-To obtain an Industrial Mechanic role that leverages my 11+ years of experience troubleshooting complex industrial equipment and developing robust software solutions for manufacturing systems, instrumentation, and robotics. I offer my expertise in preventative maintenance, electronics, circuit design, and programming languages to improve production efficiency, uptime, quality, and innovation.
+To obtain an Industrial Mechanic role that leverages my 11+ years of experience troubleshooting complex industrial equipment and developing robust software solutions for manufacturing systems, instrumentation, and robotics. I offer my expertise in preventative maintenance, manufacturing processes, and programming languages to improve production efficiency, uptime, quality, and innovation.
 
-My goal is to utilize my mechatronics skill set in automation technologies to reduce downtime and drive process improvements through systemic analysis and effective implementations.
+My goal is to utilize my skill set in automation technologies to reduce downtime and drive process improvements through systemic analysis and effective implementations.
 
