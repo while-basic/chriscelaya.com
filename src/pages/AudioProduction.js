@@ -7,7 +7,7 @@ import '../static/css/components/_audioproduction.scss';
 const AudioProduction = () => {
   const tracks = [
     {
-      id: 'electronic-fusion-01',
+      id: '80s-hip-hop-r&b',
       title: 'Home',
       artist: 'C-Cell',
       url: '/audio/Home.mp3',
@@ -15,6 +15,15 @@ const AudioProduction = () => {
       genre: 'Hip-Hop/R&B',
       year: '2024',
     },
+    // {
+    //   id: '',
+    //   title: '',
+    //   artist: 'C-Cell',
+    //   url: '/audio/.mp3',
+    //   description: '',
+    //   genre: '',
+    //   year: '2024',
+    // },
   ];
 
   const reverbDesc = 'A modern algorithmic reverb with an emphasis on creating wide, '
@@ -22,19 +31,17 @@ const AudioProduction = () => {
 
   const plugins = [
     {
-      id: 'spatial-reverb',
-      name: 'Reverb',
+      id: 'lfo-synth',
+      name: 'LFO Synth',
       description: reverbDesc,
       features: [
         'Analog-modeled compression algorithm',
         'Variable attack (0.1ms - 300ms)',
         'Variable release (50ms - 1200ms)',
-        'Ratio control (1:1 to 20:1)',
-        'Input/Output gain control',
-        'Vintage-style VU meter',
+        'Reverb gain control',
       ],
-      image: '/images/plugins/reverb.png',
-      demoVideo: 'https://youtube.com',
+      image: '/images/plugins/lfo-synth.png',
+      demoVideo: 'https://youtube.com/shorts/_kpwV3C5CYY?si=2ImPnRRTUWCX-GgC',
       status: 'Beta',
       technology: 'HISE Framework, C++',
     },
