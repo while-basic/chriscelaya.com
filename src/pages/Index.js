@@ -36,6 +36,14 @@ const Index = () => {
       icon: '⚙️',
       ariaLabel: 'Industrial Technology expertise - Learn more',
     },
+    {
+      title: 'Audio Engineering & Music Production',
+      description: `Passionate about crafting high-quality sound experiences through recording, mixing, 
+        and music production, combining technical expertise with creative vision.`,
+      link: '/music',
+      icon: '🎧',
+      ariaLabel: 'Audio Engineering and Music Production expertise - View music',
+    },
   ];
 
   return (
