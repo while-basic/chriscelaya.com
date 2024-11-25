@@ -21,6 +21,10 @@ const routes = [
     path: '/blog',
   },
   {
+    label: 'Audio Production',
+    path: '/audio-production',
+  },
+  {
     label: 'Contact',
     path: '/contact',
   },

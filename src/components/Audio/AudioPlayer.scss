@@ -1,0 +1,123 @@
+.audio-player {
+  background: var(--background-color-alt);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .track-info {
+    margin-bottom: 1.2rem;
+
+    h4 {
+      font-size: 1.4rem;
+      margin: 0 0 0.5rem;
+      color: var(--text-color);
+    }
+
+    .artist {
+      font-size: 1rem;
+      color: var(--text-color-light);
+      margin: 0 0 0.8rem;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0 1rem;
+    }
+
+    .metadata {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-color-light);
+
+      span {
+        background: var(--background-color);
+        padding: 0.3rem 0.8rem;
+        border-radius: 16px;
+      }
+    }
+  }
+
+  .player-controls {
+    .play-button {
+      background: var(--primary-color);
+      border: none;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease;
+      font-size: 1.2rem;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &.playing {
+        background: var(--accent-color);
+      }
+    }
+
+    .progress-bar {
+      .seek-slider {
+        width: 100%;
+        height: 5px;
+        -webkit-appearance: none;
+        background: var(--background-color);
+        border-radius: 3px;
+        margin-bottom: 0.5rem;
+
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 12px;
+          height: 12px;
+          background: var(--primary-color);
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        &::-moz-range-thumb {
+          width: 12px;
+          height: 12px;
+          background: var(--primary-color);
+          border-radius: 50%;
+          cursor: pointer;
+          border: none;
+        }
+      }
+
+      .time-display {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: var(--text-color-light);
+      }
+    }
+  }
+}
+
+// Add responsive styles
+@media screen and (max-width: 768px) {
+  .audio-player {
+    padding: 1rem;
+
+    .track-info {
+      h4 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .player-controls {
+      .play-button {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}

@@ -17,6 +17,7 @@ const Resume = lazy(() => import('./pages/Resume'));
 const Stats = lazy(() => import('./pages/Stats'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
+const AudioProduction = lazy(() => import('./pages/AudioProduction'));
 
 const App = () => (
   <BrowserRouter basename={PUBLIC_URL}>
@@ -30,6 +31,7 @@ const App = () => (
         <Route path="/resume" element={<Resume />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/audio-production" element={<AudioProduction />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

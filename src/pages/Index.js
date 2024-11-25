@@ -40,9 +40,9 @@ const Index = () => {
       title: 'Audio Engineering & Music Production',
       description: `Passionate about crafting high-quality sound experiences through recording, mixing, 
         and music production, combining technical expertise with creative vision.`,
-      link: '/music',
+      link: '/audio-production',
       icon: '🎧',
-      ariaLabel: 'Audio Engineering and Music Production expertise - View music',
+      ariaLabel: 'Audio Engineering and Music Production expertise - View portfolio',
     },
   ];
 
