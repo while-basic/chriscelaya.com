@@ -32,9 +32,9 @@ const Index = () => {
   const expertiseItems = [
     {
       title: 'Systems Integration',
-      description: `Specializing in connecting disparate systems, from industrial machinery to modern 
+      description: `Specializing in connecting integrated systems, from industrial machinery to modern 
         software platforms, ensuring seamless operation and optimal performance.`,
-      link: '/projects',
+      link: '',
       icon: '🔄',
       ariaLabel: 'Systems Integration expertise - View projects',
     },
@@ -42,7 +42,7 @@ const Index = () => {
       title: 'Software Development',
       description: `Self-taught programmer in C, Python, and JavaScript, creating 
         efficient solutions that solve real-world problems.`,
-      link: '/resume',
+      link: '',
       icon: '💻',
       ariaLabel: 'Software Development expertise - View resume',
     },
@@ -50,7 +50,7 @@ const Index = () => {
       title: 'Industrial Technology',
       description: `Experienced in maintaining and optimizing pneumatic, hydraulic, water, and 
         electrical systems, bringing reliability to complex industrial operations.`,
-      link: '/about',
+      link: '',
       icon: '⚙️',
       ariaLabel: 'Industrial Technology expertise - Learn more',
     },
@@ -108,7 +108,7 @@ const Index = () => {
         <section className="intro-section" aria-label="Introduction">
           <h2>Welcome to My Digital Space</h2>
           <p>
-            Based in El Paso, Texas, I&apos;m a mechatronics technician, software
+            I&apos;m a mechatronics technician, software
             developer and audio engineer with a passion for bridging the gap
             between industrial technology and modern software solutions.
           </p>
