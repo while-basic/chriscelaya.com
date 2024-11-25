@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Main from '../layouts/Main';
-
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
 import Skills from '../components/Resume/Skills';
@@ -14,35 +12,75 @@ import degrees from '../data/resume/degrees';
 import work from '../data/resume/work';
 import { skills, categories } from '../data/resume/skills';
 
-// NOTE: sections are displayed in order defined.
+import './Resume.scss';
+
+// Define section components outside of the render function
 const sections = {
-  Education: () => <Education data={degrees} />,
-  Experience: () => <Experience data={work} />,
-  Skills: () => <Skills skills={skills} categories={categories} />,
-  Courses: () => <Courses data={courses} />,
-  References: () => <References />,
+  Experience: <Experience data={work} />,
+  Skills: <Skills skills={skills} categories={categories} />,
+  Education: <Education data={degrees} />,
+  Courses: <Courses data={courses} />,
+  References: <References />,
 };
 
 const Resume = () => (
   <Main
     title="Resume"
-    description="Christopher's Resume"
+    description="Christopher Celaya's professional resume - Full Stack Developer and Data Center Technician"
   >
     <article className="post" id="resume">
       <header>
         <div className="title">
-          <h2><Link to="resume">Resume</Link></h2>
-          <div className="link-container">
-            {Object.keys(sections).map((sec) => (
-              <h4 key={sec}>
-                <a href={`#${sec.toLowerCase()}`}>{sec}</a>
-              </h4>))}
+          <h2>
+            <Link to="resume">Resume</Link>
+          </h2>
+          <div className="download-container">
+            <a
+              className="download-button"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ⬇️ Download PDF
+            </a>
           </div>
         </div>
       </header>
-      {Object.entries(sections).map(([name, Section]) => (
-        <Section key={name} />
-      ))}
+
+      <div className="resume-content">
+        <div className="quick-info">
+          <h3>Quick Info</h3>
+          <ul>
+            <li><strong>Location:</strong> El Paso, TX</li>
+            <li><strong>Email:</strong> chris@chriscelaya.xyz</li>
+            <li>
+              <strong>Looking for:</strong> Full Stack Developer, Audio Software Developer,
+              or Data Center Infrastructure positions
+            </li>
+          </ul>
+        </div>
+
+        <nav className="section-nav">
+          {Object.keys(sections).map((sec) => (
+            <a
+              key={sec}
+              href={`#${sec.toLowerCase()}`}
+              className="section-link"
+            >
+              {sec}
+            </a>
+          ))}
+        </nav>
+
+        <div className="sections">
+          {Object.entries(sections).map(([name, Section]) => (
+            <section key={name} id={name.toLowerCase()} className="resume-section">
+              <h3 className="section-title">{name}</h3>
+              {Section}
+            </section>
+          ))}
+        </div>
+      </div>
     </article>
   </Main>
 );
