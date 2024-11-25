@@ -6,33 +6,54 @@
 
 /* Wrapper */
 
-	#wrapper {
-		@include vendor('display', 'flex');
-		@include vendor('flex-direction', 'row-reverse');
-		@include vendor('transition', 'opacity #{_duration(menu)} ease');
-		margin: 0 auto;
-		max-width: 100%;
-		opacity: 1;
-		padding: (_size(section-spacing) * 1.5);
-		width: 90em;
+#wrapper {
+  @include vendor('display', 'flex');
+  @include vendor('flex-direction', 'row-reverse');
+  @include vendor('transition', 'opacity #{_duration(menu)} ease');
+  margin: 0 auto;
+  max-width: 100%;
+  opacity: 1;
+  padding: (_size(section-spacing) * 1.5);
+  width: 90em;
 
-		body.is-menu-visible & {
-			opacity: 0.15;
-		}
+  // Full width for blog pages
+  body.blog & {
+    width: 100%;
+    max-width: none;
+    padding: 0;
 
-		@include breakpoint(xlarge) {
-			padding: _size(section-spacing);
-		}
+    #main {
+      width: 100%;
+      max-width: none;
+      padding: 0;
+    }
+  }
 
-		@include breakpoint(large) {
-			display: block;
-		}
+  body.is-menu-visible & {
+    opacity: 0.15;
+  }
 
-		@include breakpoint(small) {
-			padding: _size(section-spacing-small);
-		}
+  @include breakpoint(xlarge) {
+    padding: _size(section-spacing);
 
-		body.single & {
-			display: block;
-		}
-	}
+    body.blog & {
+      padding: 0;
+    }
+  }
+
+  @include breakpoint(large) {
+    display: block;
+  }
+
+  @include breakpoint(small) {
+    padding: _size(section-spacing-small);
+
+    body.blog & {
+      padding: 0;
+    }
+  }
+
+  body.single & {
+    display: block;
+  }
+}

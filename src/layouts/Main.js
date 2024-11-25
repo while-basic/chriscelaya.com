@@ -1,29 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 import Analytics from '../components/Template/Analytics';
 import Navigation from '../components/Template/Navigation';
 import SideBar from '../components/Template/SideBar';
 import ScrollToTop from '../components/Template/ScrollToTop';
 
-const Main = (props) => (
-  <HelmetProvider>
-    <Analytics />
-    <ScrollToTop />
-    <Helmet titleTemplate="%s | Christopher Celaya" defaultTitle="Christopher Celaya" defer={false}>
-      {props.title && <title>{props.title}</title>}
-      <meta name="description" content={props.description} />
-    </Helmet>
-    <div id="wrapper">
-      <Navigation />
-      <div id="main">
-        {props.children}
+const Main = (props) => {
+  const location = useLocation();
+  const isBlogPage = location.pathname.startsWith('/blog');
+
+  useEffect(() => {
+    document.body.className = isBlogPage ? 'blog' : '';
+    return () => {
+      document.body.className = '';
+    };
+  }, [isBlogPage]);
+
+  return (
+    <HelmetProvider>
+      <Analytics />
+      <ScrollToTop />
+      <Helmet titleTemplate="%s | Christopher Celaya" defaultTitle="Christopher Celaya" defer={false}>
+        {props.title && <title>{props.title}</title>}
+        <meta name="description" content={props.description} />
+      </Helmet>
+      <div id="wrapper">
+        <Navigation />
+        <div id="main">
+          {props.children}
+        </div>
+        {!isBlogPage && !props.fullPage && <SideBar />}
       </div>
-      {props.fullPage ? null : <SideBar />}
-    </div>
-  </HelmetProvider>
-);
+    </HelmetProvider>
+  );
+};
 
 Main.propTypes = {
   children: PropTypes.oneOfType([
