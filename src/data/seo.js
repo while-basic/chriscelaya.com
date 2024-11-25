@@ -37,7 +37,7 @@ const SEO = {
   },
   twitter: {
     cardType: 'summary_large_image',
-    handle: '@chriscelaya', // Replace with your Twitter handle if you have one
+    handle: '', // Replace with your Twitter handle if you have one
   },
   schema: {
     '@context': 'https://schema.org',
@@ -47,8 +47,7 @@ const SEO = {
     url: 'https://chriscelaya.xyz',
     sameAs: [
       'https://github.com/while-basic', // Add your social profiles
-      'https://linkedin.com/in/yourprofile',
-      'https://twitter.com/yourprofile',
+      'https://www.linkedin.com/in/christophercelaya/',
     ],
     knowsAbout: [
       'Systems Integration',
