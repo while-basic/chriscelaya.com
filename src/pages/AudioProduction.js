@@ -17,9 +17,6 @@ const AudioProduction = () => {
     },
   ];
 
-  const compressorDesc = 'An analog-modeled compressor plugin inspired by classic hardware units. '
-    + 'Features variable attack and release times, ratio control, and a warm sound.';
-
   const reverbDesc = 'A modern algorithmic reverb with an emphasis on creating wide, '
     + 'immersive spaces. Includes unique modulation options and a visualizer.';
 
@@ -38,7 +35,7 @@ const AudioProduction = () => {
       ],
       image: '/images/plugins/reverb.png',
       demoVideo: 'https://youtube.com',
-      status: 'Released',
+      status: 'Beta',
       technology: 'HISE Framework, C++',
     },
     // {
