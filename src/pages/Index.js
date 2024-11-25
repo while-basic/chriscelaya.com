@@ -36,7 +36,7 @@ const Index = () => {
         software platforms, ensuring seamless operation and optimal performance.`,
       link: '',
       icon: '🔄',
-      ariaLabel: 'Systems Integration expertise - View projects',
+      ariaLabel: 'Systems Integration',
     },
     {
       title: 'Software Development',
@@ -44,7 +44,7 @@ const Index = () => {
         efficient solutions that solve real-world problems.`,
       link: '',
       icon: '💻',
-      ariaLabel: 'Software Development expertise - View resume',
+      ariaLabel: 'Software Development',
     },
     {
       title: 'Industrial Technology',
@@ -52,7 +52,7 @@ const Index = () => {
         electrical systems, bringing reliability to complex industrial operations.`,
       link: '',
       icon: '⚙️',
-      ariaLabel: 'Industrial Technology expertise - Learn more',
+      ariaLabel: 'Industrial Technology',
     },
     {
       title: 'Audio Engineering & Music Production',

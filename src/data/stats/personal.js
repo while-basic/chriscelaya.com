@@ -27,9 +27,9 @@ const data = [
   {
     key: 'cities',
     label: 'Cities Visited',
-    value: 17,
+    value: 15,
     link:
-      'https://www.google.com/maps/d/u/0/edit?mid=138lqXaH6ouu7EZ-V09lC8AWWdhAnd0A&usp=sharing',
+      'https://www.google.com/maps/d/u/0/edit?mid=11aX_elbHgNRiFEnFKrjkivCQVOR_DB4&usp=sharing',
   },
   {
     key: 'location',
