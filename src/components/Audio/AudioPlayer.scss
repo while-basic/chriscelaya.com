@@ -79,23 +79,48 @@
       background: map-get($palette, primary);
       border: none;
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 1.2rem;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       color: map-get($palette, background);
+      box-shadow: 0 4px 12px rgba(45, 91, 255, 0.3);
+      padding: 0;
+
+      svg {
+        width: 28px;
+        height: 28px;
+        transition: transform 0.2s ease;
+      }
 
       &:hover {
-        background: map-get($palette, primary-dark);
-        transform: scale(1.05);
+        background: map-get($palette, hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(45, 91, 255, 0.4);
+
+        svg {
+          transform: scale(1.1);
+        }
       }
 
       &:active {
-        transform: scale(0.98);
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(45, 91, 255, 0.25);
+      }
+
+      &.playing {
+        background: map-get($palette, active);
+        
+        svg {
+          transform: scale(0.9);
+        }
+
+        &:hover svg {
+          transform: scale(1);
+        }
       }
     }
   }

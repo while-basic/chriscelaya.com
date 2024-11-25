@@ -8,7 +8,7 @@ const AudioProduction = () => {
   const tracks = [
     {
       id: 'electronic-fusion-01',
-      title: 'Electronic Fusion',
+      title: 'Home',
       artist: 'C-Cell',
       url: '/audio/Home.mp3',
       description: 'A fusion of synthwave, hip-hop, and R&B elements with ambient textures',
