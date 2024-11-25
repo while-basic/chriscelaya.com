@@ -12,7 +12,6 @@ const validateText = (text) => {
 const messages = [
   'you can email literally about anything! ',
   'well, not anything, but most things... ',
-  'please work for us ',
 ];
 
 const useInterval = (callback, delay) => {
