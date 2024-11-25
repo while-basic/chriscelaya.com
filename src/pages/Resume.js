@@ -26,7 +26,7 @@ const sections = {
 const Resume = () => (
   <Main
     title="Resume"
-    description="Christopher Celaya's professional resume - Full Stack Developer and Data Center Technician"
+    description="Christopher Celaya's professional resume - Full Stack Developer, Audio Engineer, and Data Center Technician"
   >
     <article className="post" id="resume">
       <header>
@@ -41,7 +41,7 @@ const Resume = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              ⬇️ Download PDF
+              ⬇️ Download Resume
             </a>
           </div>
         </div>
@@ -51,10 +51,10 @@ const Resume = () => (
         <div className="quick-info">
           <h3>Quick Info</h3>
           <ul>
-            <li><strong>Location:</strong> El Paso, TX</li>
+            <li><strong>Location:</strong> El Paso, Texas</li>
             <li><strong>Email:</strong> chris@chriscelaya.xyz</li>
             <li>
-              <strong>Looking for:</strong> Full Stack Developer, Audio Software Developer,
+              <strong>Looking for:</strong> Full Stack Developer, Audio Engineer,
               or Data Center Infrastructure positions
             </li>
           </ul>
