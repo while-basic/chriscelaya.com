@@ -1,11 +1,5 @@
 const degrees = [
   {
-    school: 'Western Technical College',
-    degree: 'Electronics Engineering Technology',
-    link: 'https://www.westerntech.edu/',
-    year: 2024,
-  },
-  {
     school: 'El Paso Community College',
     degree: 'A.S. Mechanical Engineering, Electrical Engineering, Computer Science',
     link: 'https://www.epcc.edu/',
