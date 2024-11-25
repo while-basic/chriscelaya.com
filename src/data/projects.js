@@ -45,16 +45,6 @@ const data = [
       + 'By leveraging blockchain technology, it offers a seamless and reliable solution for domain name registration, ownership verification, and management, empowering users to take full control of their online presence.',
   },
   {
-    title: '3D Assembly Line Website',
-    subtitle: '2024 - Web Development, 3D Animation',
-    link: 'https://my.spline.design/assemblyline-c64f9158175071011952192dadb3bbb5/',
-    image: '/images/projects/assembly.webp',
-    date: '2021-10-01',
-    desc:
-      'In this project, I animated a 3D environment showcasing a small assembly line where coins are guided down a conveyor belt.'
-      + ' This piece was developed to highlight my abilities in creating engaging, interactive web experiences that blend technical proficiency with artistic vision.',
-  },
-  {
     title: '3D Animation',
     subtitle: '2023 - 3D Animation, Blender',
     link: 'https://www.instagram.com/p/ChrG4v_jgls/',
@@ -149,16 +139,6 @@ const data = [
     subtitle: '2024 - Natural Language Processing, LLM',
     link: 'https://ai-code-translator-pied-zeta.vercel.app/',
     image: '/images/projects/translator.webp',
-    date: '2024-03-13',
-    desc:
-      ''
-      + '',
-  },
-  {
-    title: 'Twitter Bio Generator',
-    subtitle: '2024 - Web Development, LLM',
-    link: 'https://twitter-bio-theta.vercel.app/',
-    image: '/images/projects/twitter.webp',
     date: '2024-03-13',
     desc:
       ''
