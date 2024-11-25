@@ -2,7 +2,7 @@ import React from 'react';
 import Main from '../layouts/Main';
 import AudioPlayer from '../components/Audio/AudioPlayer';
 import PluginShowcase from '../components/Audio/PluginShowcase';
-import './AudioProduction.scss';
+import '../static/css/components/_audioproduction.scss';
 
 const AudioProduction = () => {
   const tracks = [

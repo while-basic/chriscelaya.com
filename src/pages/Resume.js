@@ -7,7 +7,7 @@ import Experience from '../components/Resume/Experience';
 import degrees from '../data/resume/degrees';
 import work from '../data/resume/work';
 
-import './Resume.scss';
+import '../static/css/components/_resume.scss';
 
 // Define section components outside of the render function
 const sections = {
