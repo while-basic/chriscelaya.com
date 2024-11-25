@@ -127,6 +127,106 @@
         }
       }
     }
+
+    .skills {
+      .title {
+        margin-bottom: 2rem;
+        
+        h3 {
+          margin-bottom: 0.5rem;
+          color: #2c3e50;
+        }
+        
+        p {
+          color: #6c757d;
+          margin: 0;
+        }
+      }
+
+      .skill-button-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+
+        button {
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 20px;
+          background: #f8f9fa;
+          color: #495057;
+          font-size: 0.9rem;
+          cursor: pointer;
+          transition: all 0.2s;
+
+          &:hover {
+            background: #e9ecef;
+          }
+
+          &.active {
+            background: #2ecc71;
+            color: white;
+          }
+        }
+      }
+
+      .skill-row-container {
+        display: grid;
+        gap: 1.5rem;
+
+        .skill-item {
+          background: white;
+          border-radius: 8px;
+          padding: 1.25rem;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+          
+          .skill-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+
+            .skill-title {
+              font-weight: 500;
+              color: #2c3e50;
+            }
+
+            .skill-level {
+              color: #6c757d;
+              font-size: 0.9rem;
+            }
+          }
+
+          .skill-bar-container {
+            height: 8px;
+            background: #f1f3f5;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+
+            .skill-bar-fill {
+              height: 100%;
+              border-radius: 4px;
+              transition: width 0.3s ease;
+            }
+          }
+
+          .skill-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            .skill-category {
+              padding: 0.25rem 0.75rem;
+              border-radius: 12px;
+              font-size: 0.8rem;
+              color: white;
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
