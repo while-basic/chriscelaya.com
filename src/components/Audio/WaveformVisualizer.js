@@ -25,9 +25,19 @@ const WaveformVisualizer = ({
       barGap: 2,
       responsive: true,
       normalize: true,
+      backend: 'MediaElement',
+      mediaControls: false,
+      interact: false,
     });
 
-    wavesurfer.current.load(audioUrl);
+    // Find the existing audio element
+    const audioElement = document.querySelector(`audio[src="${audioUrl}"]`);
+    if (audioElement) {
+      wavesurfer.current.loadMediaElement(audioElement, audioUrl);
+    } else {
+      // Fallback to normal loading if audio element not found
+      wavesurfer.current.load(audioUrl);
+    }
 
     wavesurfer.current.on('ready', () => {
       if (onReady) {
@@ -42,7 +52,9 @@ const WaveformVisualizer = ({
     });
 
     return () => {
-      wavesurfer.current.destroy();
+      if (wavesurfer.current) {
+        wavesurfer.current.destroy();
+      }
     };
   }, [audioUrl]);
 

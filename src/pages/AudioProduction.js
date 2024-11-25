@@ -144,17 +144,15 @@ const AudioProduction = () => {
               <div>
                 <h3>Monitoring</h3>
                 <ul>
-                  <li>Adam Audio A7X</li>
+                  <li>KRK Rokit 5</li>
                   <li>Beyerdynamic DT 990 Pro</li>
                 </ul>
               </div>
               <div>
                 <h3>Plugins & Virtual Instruments</h3>
                 <ul>
-                  <li>Native Instruments Komplete 14</li>
                   <li>Fabfilter Pro Bundle</li>
-                  <li>Soundtoys Bundle</li>
-                  <li>Waves Mercury Bundle</li>
+                  <li>Waves Plugin Bundle</li>
                 </ul>
               </div>
             </div>
