@@ -37,7 +37,7 @@ const Resume = () => (
           <div className="download-container">
             <a
               className="download-button"
-              href="/resume.pdf"
+              href="resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
