@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Main from '../layouts/Main';
@@ -6,6 +6,24 @@ import SEO from '../components/Template/SEO';
 
 const Index = () => {
   const [activeCard, setActiveCard] = useState(null);
+
+  useEffect(() => {
+    // Load Play.ai script
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/@play-ai/web-embed';
+    script.async = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      // Initialize Play.ai after script loads
+      window.PlayAI?.open('h8VIK7geyGQM1QQp5fiS4');
+    };
+
+    return () => {
+      // Cleanup: remove script when component unmounts
+      document.body.removeChild(script);
+    };
+  }, []); // Empty dependency array means this runs once on mount
 
   const handleCardHover = (index) => {
     setActiveCard(index);
