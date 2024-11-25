@@ -22,7 +22,7 @@ const Index = () => {
     },
     {
       title: 'Software Development',
-      description: `Self-taught programmer proficient in C, Python, and JavaScript, creating 
+      description: `Self-taught programmer in C, Python, and JavaScript, creating 
         efficient solutions that solve real-world problems.`,
       link: '/resume',
       icon: '💻',
