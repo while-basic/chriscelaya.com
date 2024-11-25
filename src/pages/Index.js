@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Main from '../layouts/Main';
 import SEO from '../components/Template/SEO';
 
@@ -16,18 +17,24 @@ const Index = () => {
       description: `Specializing in connecting disparate systems, from industrial machinery to modern 
         software platforms, ensuring seamless operation and optimal performance.`,
       link: '/projects',
+      icon: '🔄',
+      ariaLabel: 'Systems Integration expertise - View projects',
     },
     {
       title: 'Software Development',
       description: `Self-taught programmer proficient in C, Python, and JavaScript, creating 
         efficient solutions that solve real-world problems.`,
       link: '/resume',
+      icon: '💻',
+      ariaLabel: 'Software Development expertise - View resume',
     },
     {
       title: 'Industrial Technology',
       description: `Experienced in maintaining and optimizing pneumatic, hydraulic, water, and 
         electrical systems, bringing reliability to complex industrial operations.`,
       link: '/about',
+      icon: '⚙️',
+      ariaLabel: 'Industrial Technology expertise - Learn more',
     },
   ];
 
@@ -36,19 +43,43 @@ const Index = () => {
       description="Christopher Celaya - Systems Integrator and Software Developer based in El Paso, TX"
     >
       <SEO />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Christopher Celaya',
+            jobTitle: ['Systems Integrator', 'Software Developer'],
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'El Paso',
+              addressRegion: 'TX',
+              addressCountry: 'US',
+            },
+            alumniOf: {
+              '@type': 'Organization',
+              name: 'T5 Data Centers',
+            },
+            knowsAbout: ['Systems Integration', 'Software Development', 'Industrial Technology', 'Python', 'JavaScript', 'C'],
+            url: 'https://chriscelaya.xyz',
+          })}
+        </script>
+      </Helmet>
+
       <article className="post" id="index">
         <header className="major">
           <div className="title">
             <h1>
               Hi, I&apos;m Christopher Celaya
             </h1>
-            <div className="subtitle">
+            <div className="subtitle" role="doc-subtitle">
+              <span className="visually-hidden">Professional roles: </span>
               Systems Integrator | Software Developer | Tech Enthusiast
             </div>
           </div>
         </header>
 
-        <section className="intro-section">
+        <section className="intro-section" aria-label="Introduction">
           <h2>Welcome to My Digital Space</h2>
           <p>
             Based in El Paso, Texas, I&apos;m a systems integrator and software developer with a
@@ -59,9 +90,9 @@ const Index = () => {
           </p>
         </section>
 
-        <section className="expertise-section">
+        <section className="expertise-section" aria-label="Areas of Expertise">
           <h2>What I Do</h2>
-          <div className="expertise-grid">
+          <div className="expertise-grid" role="list">
             {expertiseItems.map((item, index) => (
               <Link
                 to={item.link}
@@ -69,16 +100,19 @@ const Index = () => {
                 className={`expertise-item ${activeCard === index ? 'active' : ''}`}
                 onMouseEnter={() => handleCardHover(index)}
                 onMouseLeave={() => handleCardHover(null)}
+                role="listitem"
+                aria-label={item.ariaLabel}
               >
+                <span className="expertise-icon" aria-hidden="true">{item.icon}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <span className="learn-more">Learn More →</span>
+                <span className="learn-more" aria-hidden="true">Learn More →</span>
               </Link>
             ))}
           </div>
         </section>
 
-        <section className="background-section">
+        <section className="background-section" aria-label="Professional Background">
           <h2>Professional Journey</h2>
           <p>
             My path in technology has been driven by curiosity and a desire to understand how
@@ -86,19 +120,25 @@ const Index = () => {
             a Mechatronics Technician at CN Wire, I&apos;ve consistently pushed the boundaries of
             what&apos;s possible in industrial technology and software integration.
           </p>
-          <Link to="/resume" className="read-more">View Full Background →</Link>
+          <Link to="/resume" className="read-more" aria-label="View my full professional background">
+            View Full Background →
+          </Link>
         </section>
 
-        <section className="cta-section">
+        <section className="cta-section" aria-label="Contact Information">
           <h2>Let&apos;s Connect</h2>
           <p>
             I&apos;m always excited to take on new challenges and contribute to innovative
             projects. Whether you&apos;re interested in my work or looking to collaborate,
             I&apos;d love to hear from you.
           </p>
-          <div className="cta-buttons">
-            <Link to="/resume" className="button primary">View My Resume</Link>
-            <Link to="/contact" className="button secondary">Get in Touch</Link>
+          <div className="cta-buttons" role="group" aria-label="Call to action">
+            <Link to="/resume" className="button primary" aria-label="View my detailed resume">
+              View My Resume
+            </Link>
+            <Link to="/contact" className="button secondary" aria-label="Contact me">
+              Get in Touch
+            </Link>
           </div>
         </section>
       </article>
