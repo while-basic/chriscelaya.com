@@ -152,6 +152,7 @@ const AudioProduction = () => {
                 <h3>Plugins & Virtual Instruments</h3>
                 <ul>
                   <li>Fabfilter Pro Bundle</li>
+                  <li>Serum</li>
                   <li>Waves Plugin Bundle</li>
                 </ul>
               </div>

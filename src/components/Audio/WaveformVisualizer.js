@@ -5,9 +5,8 @@ import WaveSurfer from 'wavesurfer.js';
 
 const WaveformVisualizer = ({
   audioUrl,
-  onReady,
-  onTimeUpdate,
   isPlaying,
+  onPlayPause,
 }) => {
   const waveformRef = useRef(null);
   const wavesurfer = useRef(null);
@@ -15,9 +14,9 @@ const WaveformVisualizer = ({
   useEffect(() => {
     wavesurfer.current = WaveSurfer.create({
       container: waveformRef.current,
-      waveColor: 'var(--text-color-light)',
-      progressColor: 'var(--primary-color)',
-      cursorColor: 'var(--accent-color)',
+      waveColor: '#646464',
+      progressColor: '#2e59ba',
+      cursorColor: '#2e59ba',
       barWidth: 2,
       barRadius: 3,
       cursorWidth: 1,
@@ -25,30 +24,13 @@ const WaveformVisualizer = ({
       barGap: 2,
       responsive: true,
       normalize: true,
-      backend: 'MediaElement',
-      mediaControls: false,
-      interact: false,
     });
 
-    // Find the existing audio element
-    const audioElement = document.querySelector(`audio[src="${audioUrl}"]`);
-    if (audioElement) {
-      wavesurfer.current.loadMediaElement(audioElement, audioUrl);
-    } else {
-      // Fallback to normal loading if audio element not found
-      wavesurfer.current.load(audioUrl);
-    }
+    wavesurfer.current.load(audioUrl);
 
-    wavesurfer.current.on('ready', () => {
-      if (onReady) {
-        onReady(wavesurfer.current);
-      }
-    });
-
-    wavesurfer.current.on('audioprocess', () => {
-      if (onTimeUpdate) {
-        onTimeUpdate(wavesurfer.current.getCurrentTime());
-      }
+    // Add click handler for play/pause
+    wavesurfer.current.on('interaction', () => {
+      onPlayPause();
     });
 
     return () => {
@@ -80,14 +62,11 @@ const WaveformVisualizer = ({
 
 WaveformVisualizer.propTypes = {
   audioUrl: PropTypes.string.isRequired,
-  onReady: PropTypes.func,
-  onTimeUpdate: PropTypes.func,
   isPlaying: PropTypes.bool,
+  onPlayPause: PropTypes.func.isRequired,
 };
 
 WaveformVisualizer.defaultProps = {
-  onReady: null,
-  onTimeUpdate: null,
   isPlaying: false,
 };
 
