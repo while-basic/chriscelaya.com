@@ -1,60 +1,70 @@
-import React, { useState, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from 'react';
 import Main from '../layouts/Main';
 import AudioPlayer from '../components/Audio/AudioPlayer';
+import PluginShowcase from '../components/Audio/PluginShowcase';
+import './AudioProduction.scss';
 
 const AudioProduction = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedGenre, setSelectedGenre] = useState('all');
-
   const tracks = [
     {
-      id: '80s-hip-hop-r&b-01',
-      title: 'Hip-Hop, R&B',
+      id: 'electronic-fusion-01',
+      title: 'Electronic Fusion',
       artist: 'C-Cell',
       url: '/audio/Home.mp3',
-      // captionsUrl: '/audio/captions/electronic-fusion.vtt',
       description: 'A fusion of synthwave, hip-hop, and R&B elements with ambient textures',
       genre: 'Hip-Hop/R&B',
       year: '2024',
     },
-    // {
-    //   id: '80s-hip-hop-r&b-01',
-    //   title: 'Hip-Hop, R&B',
-    //   artist: 'C-Cell',
-    //   url: '/audio/Home.mp3',
-    //   // captionsUrl: '/audio/captions/electronic-fusion.vtt',
-    //   description: 'A fusion of synthwave, hip-hop, and R&B elements with ambient textures',
-    //   genre: 'Hip-Hop/R&B',
-    //   year: '2024',
-    // },
   ];
 
-  const genres = useMemo(() => {
-    const uniqueGenres = new Set(tracks.map((track) => track.genre));
-    return ['all', ...Array.from(uniqueGenres)];
-  }, []);
+  const compressorDesc = 'An analog-modeled compressor plugin inspired by classic hardware units. '
+    + 'Features variable attack and release times, ratio control, and a warm sound.';
 
-  const filteredTracks = useMemo(() => tracks.filter((track) => {
-    const matchesSearch = track.title.toLowerCase().includes(searchTerm.toLowerCase())
-      || track.description.toLowerCase().includes(searchTerm.toLowerCase())
-      || track.genre.toLowerCase().includes(searchTerm.toLowerCase());
+  const reverbDesc = 'A modern algorithmic reverb with an emphasis on creating wide, '
+    + 'immersive spaces. Includes unique modulation options and a visualizer.';
 
-    const matchesGenre = selectedGenre === 'all' || track.genre === selectedGenre;
-
-    return matchesSearch && matchesGenre;
-  }), [searchTerm, selectedGenre, tracks]);
+  const plugins = [
+    {
+      id: 'spatial-reverb',
+      name: 'Reverb',
+      description: reverbDesc,
+      features: [
+        'Analog-modeled compression algorithm',
+        'Variable attack (0.1ms - 300ms)',
+        'Variable release (50ms - 1200ms)',
+        'Ratio control (1:1 to 20:1)',
+        'Input/Output gain control',
+        'Vintage-style VU meter',
+      ],
+      image: '/images/plugins/reverb.png',
+      demoVideo: 'https://youtube.com',
+      status: 'Released',
+      technology: 'HISE Framework, C++',
+    },
+    // {
+    //   id: 'spatial-reverb',
+    //   name: 'Spatial Reverb',
+    //   description: reverbDesc,
+    //   features: [
+    //     'Custom reverb algorithm',
+    //     'Multiple room models',
+    //     'Modulation section',
+    //     'Pre-delay control',
+    //     'Width control',
+    //     'Real-time spectrum analyzer',
+    //   ],
+    //   image: '/images/plugins/spatial-reverb.png',
+    //   demoVideo: 'https://youtube.com/',
+    //   status: 'Beta',
+    //   technology: 'HISE Framework, C++',
+    // },
+  ];
 
   return (
     <Main
       title="Audio Production"
-      description="Audio engineering and music production portfolio showcasing my work in sound design, mixing, and production."
+      description="Audio engineering and music production portfolio"
     >
-      <Helmet>
-        <title>Audio Production | C-Cell</title>
-        <meta name="description" content="Audio engineering and music production portfolio" />
-      </Helmet>
-
       <article className="post" id="audio">
         <header>
           <div className="title">
@@ -66,96 +76,24 @@ const AudioProduction = () => {
         </header>
 
         <div className="audio-portfolio">
-          <section className="introduction" aria-label="Portfolio introduction">
-            <p>
-              Welcome to my audio portfolio. Here you&apos;ll find a selection of my work in audio
-              engineering, music production, and sound design. Each track demonstrates different
-              aspects of my expertise, from recording and mixing to final production.
+          <section className="tracks-section">
+            <h2>Music</h2>
+            <div className="tracks-container">
+              {tracks.map((track) => (
+                <AudioPlayer key={track.id} track={track} />
+              ))}
+            </div>
+          </section>
+
+          <section className="plugins-section">
+            <h2>Audio Plugins</h2>
+            <p className="section-intro">
+              Custom plugins developed using modern DSP techniques and the HISE framework.
             </p>
-          </section>
-
-          <section className="track-filters" aria-label="Track filters">
-            <div className="search-container">
-              <label htmlFor="track-search" className="sr-only">
-                Search tracks
-                <input
-                  id="track-search"
-                  type="search"
-                  placeholder="Search tracks..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="search-input"
-                  aria-label="Search through tracks"
-                />
-              </label>
-            </div>
-
-            <div className="genre-filter">
-              <label htmlFor="genre-select" className="sr-only">
-                Filter by genre
-                <select
-                  id="genre-select"
-                  value={selectedGenre}
-                  onChange={(e) => setSelectedGenre(e.target.value)}
-                  className="genre-select"
-                  aria-label="Filter tracks by genre"
-                >
-                  {genres.map((genre) => (
-                    <option key={genre} value={genre}>
-                      {genre === 'all' ? 'All Genres' : genre}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-          </section>
-
-          <section className="track-list" aria-label="Audio tracks">
-            {filteredTracks.length > 0 ? (
-              filteredTracks.map((track) => (
-                <AudioPlayer
-                  key={track.id}
-                  track={track}
-                />
-              ))
-            ) : (
-              <p className="no-results">No tracks found matching your criteria.</p>
-            )}
-          </section>
-
-          <section className="equipment" aria-label="Equipment and software">
-            <h2>Equipment & Software</h2>
-            <div className="equipment-list">
-              <div>
-                <h3>Digital Audio Workstations</h3>
-                <ul>
-                  <li>Ableton Live 12 Suite</li>
-                  <li>Logic Pro X</li>
-                  <li>Pro Tools</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Audio Interfaces</h3>
-                <ul>
-                  <li>Universal Audio Volt 2</li>
-                  <li>Focusrite Scarlett 2i2</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Monitoring</h3>
-                <ul>
-                  <li>KRK Rokit 5</li>
-                  <li>Beyerdynamic DT 990 Pro</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Plugins & Virtual Instruments</h3>
-                <ul>
-                  <li>Fabfilter Pro Bundle</li>
-                  <li>Serum</li>
-                  <li>Waves Plugin Bundle</li>
-                </ul>
-              </div>
+            <div className="plugins-container">
+              {plugins.map((plugin) => (
+                <PluginShowcase key={plugin.id} plugin={plugin} />
+              ))}
             </div>
           </section>
         </div>

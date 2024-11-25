@@ -1,0 +1,34 @@
+@import '../static/css/libs/vars';
+
+.audio-portfolio {
+  .tracks-section,
+  .plugins-section {
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: map-get($palette, text);
+    }
+  }
+
+  .section-intro {
+    color: map-get($palette, text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 800px;
+  }
+
+  .tracks-container {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .plugins-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}

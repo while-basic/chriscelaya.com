@@ -1,0 +1,160 @@
+@import '../../static/css/libs/vars';
+
+.plugin-card {
+  background: map-get($palette, background);
+  border: 1px solid map-get($palette, border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .plugin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: map-get($palette, text);
+    }
+
+    .status-badge {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+
+      &.released {
+        background: rgba(39, 174, 96, 0.1);
+        color: #27ae60;
+      }
+
+      &.beta {
+        background: rgba(241, 196, 15, 0.1);
+        color: #f1c40f;
+      }
+
+      &.development {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+      }
+    }
+  }
+
+  .plugin-image {
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .plugin-content {
+    .description {
+      color: map-get($palette, text-light);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .features {
+      margin-bottom: 1.5rem;
+
+      h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: map-get($palette, text);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          color: map-get($palette, text-light);
+          padding-left: 1.5rem;
+          position: relative;
+          margin-bottom: 0.5rem;
+
+          &:before {
+            content: "•";
+            color: map-get($palette, primary);
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    .tech-info {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: map-get($palette, background-alt);
+      border-radius: 8px;
+
+      .tech-stack {
+        color: map-get($palette, text-light);
+        font-size: 0.9rem;
+
+        strong {
+          color: map-get($palette, text);
+        }
+      }
+    }
+
+    .demo-link {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: map-get($palette, primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: map-get($palette, primary-dark);
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.plugins-section {
+  .section-intro {
+    color: map-get($palette, text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .plugins-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
