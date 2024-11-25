@@ -12,7 +12,7 @@ const AudioProduction = () => {
       id: 'electronic-fusion-01',
       title: 'Electronic Fusion',
       artist: 'Christopher Celaya',
-      url: '/audio/electronic-fusion.mp3',
+      url: '/audio/Home.mp3',
       captionsUrl: '/audio/captions/electronic-fusion.vtt',
       description: 'A fusion of electronic and acoustic elements with ambient textures',
       genre: 'Electronic/Ambient',

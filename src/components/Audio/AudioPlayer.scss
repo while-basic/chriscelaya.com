@@ -1,55 +1,53 @@
 .audio-player {
-  background: var(--background-color-alt);
-  border-radius: 12px;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .track-info {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
 
     h4 {
-      font-size: 1.4rem;
       margin: 0 0 0.5rem;
+      font-size: 1.25rem;
       color: var(--text-color);
     }
 
     .artist {
-      font-size: 1rem;
       color: var(--text-color-light);
-      margin: 0 0 0.8rem;
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
     }
 
     .description {
-      font-size: 0.95rem;
-      line-height: 1.5;
+      color: var(--text-color-light);
       margin: 0 0 1rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
     .metadata {
       display: flex;
       gap: 1rem;
       font-size: 0.85rem;
-      color: var(--text-color-light);
 
       span {
-        background: var(--background-color);
-        padding: 0.3rem 0.8rem;
-        border-radius: 16px;
+        color: var(--text-color-light);
+        background: var(--background-color-alt);
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
       }
     }
   }
 
   .waveform-container {
-    margin: 1rem 0;
-    background: var(--background-color);
-    border-radius: 8px;
+    margin-bottom: 1rem;
+    background: var(--background-color-alt);
+    border-radius: 4px;
     padding: 1rem;
-    
-    .waveform-visualizer {
-      width: 100%;
-      height: 80px;
-    }
+    height: 100px;
   }
 
   .player-controls {
@@ -59,71 +57,67 @@
       gap: 1rem;
       margin-bottom: 1rem;
 
-      button {
-        background: none;
+      .play-button {
+        background: var(--primary-color);
         border: none;
-        cursor: pointer;
-        padding: 0.5rem;
         border-radius: 50%;
-        transition: all 0.2s ease;
+        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.2s;
 
         &:hover {
-          background: var(--background-color);
-        }
-
-        span {
-          font-size: 1.2rem;
-        }
-      }
-
-      .play-button {
-        background: var(--primary-color);
-        width: 3rem;
-        height: 3rem;
-
-        &:hover {
-          transform: scale(1.05);
-          background: var(--primary-color);
+          background: var(--primary-color-dark);
         }
 
         &.playing {
           background: var(--accent-color);
         }
+      }
 
-        span {
-          font-size: 1.4rem;
+      .volume-control {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .mute-button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0.25rem;
+          font-size: 1.2rem;
+        }
+
+        .volume-slider {
+          width: 80px;
         }
       }
-    }
 
-    .volume-control {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex: 1;
-      max-width: 100px;
-
-      .volume-slider {
-        width: 100%;
-        height: 4px;
+      .playback-rate {
+        .playback-rate-select {
+          padding: 0.25rem 0.5rem;
+          border: 1px solid var(--border-color);
+          border-radius: 4px;
+          background: var(--background-color);
+          color: var(--text-color);
+          cursor: pointer;
+        }
       }
-    }
 
-    .playback-rate {
-      select {
-        background: var(--background-color);
+      .share-button {
+        background: none;
         border: none;
-        padding: 0.3rem 0.6rem;
-        border-radius: 4px;
-        color: var(--text-color);
-        font-size: 0.9rem;
         cursor: pointer;
+        padding: 0.25rem;
+        font-size: 1.2rem;
+        opacity: 0.8;
+        transition: opacity 0.2s;
 
         &:hover {
-          background: var(--background-color-alt);
+          opacity: 1;
         }
       }
     }
@@ -131,29 +125,7 @@
     .progress-bar {
       .seek-slider {
         width: 100%;
-        height: 5px;
-        -webkit-appearance: none;
-        background: var(--background-color);
-        border-radius: 3px;
         margin-bottom: 0.5rem;
-
-        &::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          width: 12px;
-          height: 12px;
-          background: var(--primary-color);
-          border-radius: 50%;
-          cursor: pointer;
-        }
-
-        &::-moz-range-thumb {
-          width: 12px;
-          height: 12px;
-          background: var(--primary-color);
-          border-radius: 50%;
-          cursor: pointer;
-          border: none;
-        }
       }
 
       .time-display {
@@ -244,6 +216,36 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+// Styling for range inputs
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+  
+  &::-webkit-slider-runnable-track {
+    background: var(--border-color);
+    height: 4px;
+    border-radius: 2px;
+  }
+  
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin-top: -4px;
+    cursor: pointer;
+  }
+  
+  &:focus {
+    outline: none;
+    
+    &::-webkit-slider-thumb {
+      background: var(--primary-color-dark);
+    }
+  }
 }
 
 // Responsive styles

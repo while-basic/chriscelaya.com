@@ -1,8 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import WaveSurfer from 'wavesurfer.js';
 
-const WaveformVisualizer = ({ audioUrl, onReady, onTimeUpdate, isPlaying }) => {
+const WaveformVisualizer = ({
+  audioUrl,
+  onReady,
+  onTimeUpdate,
+  isPlaying,
+}) => {
   const waveformRef = useRef(null);
   const wavesurfer = useRef(null);
 
@@ -51,10 +57,10 @@ const WaveformVisualizer = ({ audioUrl, onReady, onTimeUpdate, isPlaying }) => {
   }, [isPlaying]);
 
   return (
-    <div 
-      ref={waveformRef} 
+    <div
+      ref={waveformRef}
       className="waveform-visualizer"
-      role="img" 
+      role="img"
       aria-label="Audio waveform visualization"
     />
   );
