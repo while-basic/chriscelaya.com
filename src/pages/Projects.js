@@ -1,29 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import Main from '../layouts/Main';
-import Cell from '../components/Projects/Cell';
+import Projects from '../components/Projects/Projects';
 import data from '../data/projects';
 
-const Projects = () => (
+const ProjectsPage = () => (
   <Main
     title="Projects"
-    description="Learn about Christopher's projects."
+    description="Learn about Christopher Celaya's projects."
   >
     <article className="post" id="projects">
       <header>
         <div className="title">
-          <h2><Link to="/projects">Projects</Link></h2>
+          <h2>
+            <Link to="/projects">Projects</Link>
+          </h2>
           <p>A selection of projects that I&apos;m not too ashamed of.</p>
         </div>
       </header>
-      {data.map((project) => (
-        <Cell
-          data={project}
-          key={project.title}
-        />
-      ))}
+      <Projects data={data} />
     </article>
   </Main>
 );
 
-export default Projects;
+export default ProjectsPage;
