@@ -154,10 +154,10 @@ const AudioProduction = () => {
     },
     {
       id: 'daw',
-      name: 'Ableton Live 12 Suite',
+      name: 'Logic Pro X',
       category: 'software',
       description: 'Professional digital audio workstation for music production',
-      image: '/images/equipment/ableton-live.jpg',
+      image: '/images/plugins/logic-pro-x.webp',
       specs: [
         'Complete sound library',
         'Max for Live integration',
@@ -167,10 +167,10 @@ const AudioProduction = () => {
     },
     {
       id: 'daw',
-      name: 'FL Studio 20',
+      name: 'Abelton Live 12',
       category: 'software',
       description: 'Professional digital audio workstation for music production',
-      image: '/images/equipment/ableton-live.jpg',
+      image: '/images/plugins/abelton.png',
       specs: [
         'Complete sound library',
         'Max for Live integration',
@@ -182,8 +182,8 @@ const AudioProduction = () => {
       id: 'daw',
       name: 'Avid Pro Tools',
       category: 'software',
-      description: 'Professional digital audio workstation for music production',
-      image: '/images/equipment/ableton-live.jpg',
+      description: 'Last step in the production process, used for mixing and mastering.',
+      image: '/images/plugins/pro-tools.jpg',
       specs: [
         'Complete sound library',
         'Max for Live integration',
