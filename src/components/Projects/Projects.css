@@ -28,7 +28,7 @@
 
 .project-link {
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
 .project-image-container {
@@ -71,12 +71,14 @@
   margin: 0 0 0.5rem;
   font-size: 1.5rem;
   font-weight: 600;
+  color: white;
 }
 
 .project-date {
   font-size: 0.9rem;
   opacity: 0.8;
   margin: 0 0 0.5rem;
+  color: white;
 }
 
 .project-desc {
@@ -86,6 +88,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  color: white;
 }
 
 @media (max-width: 768px) {
