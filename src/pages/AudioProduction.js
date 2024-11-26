@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import Main from '../layouts/Main';
 import AudioPlayer from '../components/Audio/AudioPlayer';
 import PluginShowcase from '../components/Audio/PluginShowcase';
+import StudioShowcase from '../components/Audio/StudioShowcase';
 import '../static/css/components/_audioproduction.scss';
 import '../static/css/components/_audioplayer.scss';
+import '../static/css/components/_studioshowcase.scss';
 
 const AudioProduction = () => {
   const tracks = [
@@ -99,6 +101,109 @@ const AudioProduction = () => {
       year: '2024',
     },
     // Add more tracks here
+    // {
+    //   id: '',
+    //   title: '',
+    //   artist: 'C-Cell (Producer)',
+    //   url: '/audio/',
+    //   description: '',
+    //   genre: ''
+    //   year: '',
+    // },
+  ];
+
+  const studioEquipment = [
+    {
+      id: 'interface',
+      name: 'Universal Audio Volt 2',
+      category: 'hardware',
+      description: 'Professional audio interface with UAD processing capabilities',
+      image: '/images/equipment/apollo-twin.jpg',
+      specs: [
+        '24-bit/192 kHz audio conversion',
+        'Unison preamp technology',
+        'Built-in UAD-2 processing',
+        'Thunderbolt 3 connectivity',
+      ],
+    },
+    {
+      id: 'interface',
+      name: 'Scarlett 2i2',
+      category: 'hardware',
+      description: 'Professional audio interface with UAD processing capabilities',
+      image: '/images/equipment/apollo-twin.jpg',
+      specs: [
+        '24-bit/192 kHz audio conversion',
+        'Unison preamp technology',
+        'Built-in UAD-2 processing',
+        'Thunderbolt 3 connectivity',
+      ],
+    },
+    {
+      id: 'monitors',
+      name: 'KRK Rokit 5',
+      category: 'hardware',
+      description: 'Professional studio monitors',
+      image: '/images/equipment/adam-a7x.jpg',
+      specs: [
+        '7" woofer',
+        'X-ART accelerated ribbon tweeter',
+        'Frequency response: 42 Hz - 50 kHz',
+        'Max SPL: 114 dB',
+      ],
+    },
+    {
+      id: 'daw',
+      name: 'Ableton Live 12 Suite',
+      category: 'software',
+      description: 'Professional digital audio workstation for music production',
+      image: '/images/equipment/ableton-live.jpg',
+      specs: [
+        'Complete sound library',
+        'Max for Live integration',
+        'Advanced MIDI editing',
+        'Professional mixing tools',
+      ],
+    },
+    {
+      id: 'daw',
+      name: 'FL Studio 20',
+      category: 'software',
+      description: 'Professional digital audio workstation for music production',
+      image: '/images/equipment/ableton-live.jpg',
+      specs: [
+        'Complete sound library',
+        'Max for Live integration',
+        'Advanced MIDI editing',
+        'Professional mixing tools',
+      ],
+    },
+    {
+      id: 'daw',
+      name: 'Avid Pro Tools',
+      category: 'software',
+      description: 'Professional digital audio workstation for music production',
+      image: '/images/equipment/ableton-live.jpg',
+      specs: [
+        'Complete sound library',
+        'Max for Live integration',
+        'Advanced MIDI editing',
+        'Professional mixing tools',
+      ],
+    },
+    {
+      id: 'pro-q',
+      name: 'FabFilter Pro-Q 3',
+      category: 'plugins',
+      description: 'High-end equalizer plugin with dynamic EQ capabilities',
+      image: '/images/equipment/fabfilter-proq.jpg',
+      specs: [
+        'Dynamic EQ processing',
+        'Linear phase operation',
+        'Up to 24 bands',
+        'Spectrum analyzer',
+      ],
+    },
   ];
 
   const container = {
@@ -199,13 +304,17 @@ const AudioProduction = () => {
         <motion.section className="plugins-section" variants={item}>
           <h3>Audio Plugins</h3>
           <p className="section-intro">
-            Custom plugins developed using modern DSP techniques and the HISE framework.
+            Discover my collection of custom audio plugins designed for modern music production.
           </p>
-          <div className="plugins-container">
-            {plugins.map((plugin) => (
-              <PluginShowcase key={plugin.id} plugin={plugin} />
-            ))}
-          </div>
+          <PluginShowcase plugins={plugins} />
+        </motion.section>
+
+        <motion.section className="studio-section" variants={item}>
+          <h3>Studio Equipment</h3>
+          <p className="section-intro">
+            Take a look at the professional gear I use for music production and audio engineering.
+          </p>
+          <StudioShowcase equipment={studioEquipment} />
         </motion.section>
       </motion.article>
     </Main>

@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import './PluginShowcase.scss';
 
-const PluginShowcase = ({ plugin }) => (
-  <div className="plugin-card">
+const PluginCard = ({ plugin }) => (
+  <motion.div
+    className="plugin-card"
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+  >
     <div className="plugin-header">
       <h3>{plugin.name}</h3>
       <span className={`status-badge ${plugin.status.toLowerCase()}`}>
@@ -43,10 +48,18 @@ const PluginShowcase = ({ plugin }) => (
         </a>
       )}
     </div>
+  </motion.div>
+);
+
+const PluginShowcase = ({ plugins }) => (
+  <div className="plugins-grid">
+    {plugins.map((plugin) => (
+      <PluginCard key={plugin.id} plugin={plugin} />
+    ))}
   </div>
 );
 
-PluginShowcase.propTypes = {
+PluginCard.propTypes = {
   plugin: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -57,6 +70,19 @@ PluginShowcase.propTypes = {
     status: PropTypes.string.isRequired,
     technology: PropTypes.string.isRequired,
   }).isRequired,
+};
+
+PluginShowcase.propTypes = {
+  plugins: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    features: PropTypes.arrayOf(PropTypes.string).isRequired,
+    image: PropTypes.string.isRequired,
+    demoVideo: PropTypes.string,
+    status: PropTypes.string.isRequired,
+    technology: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default PluginShowcase;

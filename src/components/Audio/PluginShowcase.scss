@@ -1,88 +1,71 @@
 @import '../../static/css/libs/vars';
 
-.plugin-card {
-  background: map-get($palette, background);
-  border: 1px solid map-get($palette, border);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+.plugins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
-  }
+.plugin-card {
+  background: var(--background-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 
   .plugin-header {
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    background: var(--background-primary);
 
     h3 {
       margin: 0;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: map-get($palette, text);
+      font-size: 1.25rem;
+      color: var(--text-primary);
     }
 
     .status-badge {
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
       font-weight: 500;
 
-      &.released {
-        background: rgba(39, 174, 96, 0.1);
-        color: #27ae60;
-      }
-
       &.beta {
-        background: rgba(241, 196, 15, 0.1);
-        color: #f1c40f;
-      }
-
-      &.development {
-        background: rgba(52, 152, 219, 0.1);
-        color: #3498db;
+        background: var(--accent-color);
+        color: var(--text-light);
       }
     }
   }
 
   .plugin-image {
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
+    width: 100%;
+    height: 200px;
     overflow: hidden;
-    
+
     img {
       width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.02);
-      }
+      height: 100%;
+      object-fit: cover;
     }
   }
 
   .plugin-content {
+    padding: 1.5rem;
+
     .description {
-      color: map-get($palette, text-light);
-      font-size: 1rem;
-      line-height: 1.6;
+      color: var(--text-secondary);
       margin-bottom: 1.5rem;
+      line-height: 1.6;
     }
 
     .features {
-      margin-bottom: 1.5rem;
-
       h4 {
         font-size: 1.1rem;
-        margin-bottom: 1rem;
-        color: map-get($palette, text);
+        margin-bottom: 0.75rem;
+        color: var(--text-primary);
       }
 
       ul {
@@ -91,70 +74,56 @@
         margin: 0;
 
         li {
-          color: map-get($palette, text-light);
-          padding-left: 1.5rem;
-          position: relative;
-          margin-bottom: 0.5rem;
+          padding: 0.5rem 0;
+          color: var(--text-secondary);
+          border-bottom: 1px solid var(--border-color);
+          font-size: 0.95rem;
 
-          &:before {
-            content: "•";
-            color: map-get($palette, primary);
-            position: absolute;
-            left: 0;
+          &:last-child {
+            border-bottom: none;
           }
         }
       }
     }
 
     .tech-info {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: map-get($palette, background-alt);
-      border-radius: 8px;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
 
-      .tech-stack {
-        color: map-get($palette, text-light);
-        font-size: 0.9rem;
-
-        strong {
-          color: map-get($palette, text);
-        }
+      strong {
+        color: var(--text-primary);
       }
     }
 
     .demo-link {
       display: inline-block;
+      margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
-      background: map-get($palette, primary);
-      color: white;
+      background: var(--accent-color);
+      color: var(--text-light);
       text-decoration: none;
-      border-radius: 25px;
+      border-radius: 4px;
       font-weight: 500;
-      transition: all 0.2s ease;
+      transition: background-color 0.2s ease;
 
       &:hover {
-        background: map-get($palette, primary-dark);
-        transform: translateY(-1px);
-      }
-
-      &:active {
-        transform: translateY(0);
+        background: var(--accent-color-dark);
       }
     }
   }
 }
 
-.plugins-section {
-  .section-intro {
-    color: map-get($palette, text-light);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+@media screen and (max-width: 768px) {
+  .plugins-grid {
+    grid-template-columns: 1fr;
   }
 
-  .plugins-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .plugin-card {
+    .plugin-image {
+      height: 180px;
+    }
   }
 }
