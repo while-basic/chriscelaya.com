@@ -11,10 +11,19 @@ const AudioProduction = () => {
     {
       id: '80s-hip-hop-r&b',
       title: 'Home',
-      artist: 'C-Cell',
+      artist: 'C-Cell (Producer)',
       url: '/audio/Home.mp3',
       description: 'A fusion of synthwave, hip-hop, and R&B elements with ambient textures',
       genre: 'Hip-Hop/R&B',
+      year: '2024',
+    },
+    {
+      id: 'do-it-again',
+      title: 'Do It Again',
+      artist: 'C-Cell (Producer) & Ghost Music (Vocalist)',
+      url: '/audio/Do_It_Again.mp3',
+      description: 'Combination of pop, hip-hop, and R&B elements',
+      genre: 'Hip-Hop/Pop',
       year: '2024',
     },
     // Add more tracks here
