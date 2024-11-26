@@ -191,19 +191,19 @@ const AudioProduction = () => {
         'Professional mixing tools',
       ],
     },
-    {
-      id: 'pro-q',
-      name: 'FabFilter Pro-Q 3',
-      category: 'plugins',
-      description: 'High-end equalizer plugin with dynamic EQ capabilities',
-      image: '/images/equipment/fabfilter-proq.jpg',
-      specs: [
-        'Dynamic EQ processing',
-        'Linear phase operation',
-        'Up to 24 bands',
-        'Spectrum analyzer',
-      ],
-    },
+    // {
+    //   id: 'pro-q',
+    //   name: 'FabFilter Pro-Q 3',
+    //   category: 'plugins',
+    //   description: 'High-end equalizer plugin with dynamic EQ capabilities',
+    //   image: '/images/equipment/fabfilter-proq.jpg',
+    //   specs: [
+    //     'Dynamic EQ processing',
+    //     'Linear phase operation',
+    //     'Up to 24 bands',
+    //     'Spectrum analyzer',
+    //   ],
+    // },
   ];
 
   const container = {
