@@ -1,72 +1,56 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import './PluginShowcase.scss';
 
-const PluginCard = ({ plugin }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const PluginCard = ({ plugin }) => (
+  <motion.div
+    className="plugin-card"
+    whileHover={{ scale: 1.01 }}
+    layout
+  >
+    <div className="plugin-header">
+      <h3>{plugin.name}</h3>
+      <span className={`status-badge ${plugin.status.toLowerCase()}`}>
+        {plugin.status}
+      </span>
+    </div>
 
-  return (
-    <motion.div
-      className={`plugin-card ${isExpanded ? 'expanded' : ''}`}
-      onClick={() => setIsExpanded(!isExpanded)}
-      whileHover={{ scale: 1.01 }}
-      layout
-    >
-      <div className="plugin-header">
-        <h3>{plugin.name}</h3>
-        <span className={`status-badge ${plugin.status.toLowerCase()}`}>
-          {plugin.status}
+    <div className="plugin-content">
+      {plugin.image && (
+        <div className="plugin-image">
+          <img src={plugin.image} alt={`${plugin.name} interface`} />
+        </div>
+      )}
+      <p className="description">{plugin.description}</p>
+      <div className="features">
+        <h4>Key Features</h4>
+        <ul>
+          {plugin.features.map((feature) => (
+            <li key={`${plugin.id}-${feature}`}>{feature}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="tech-info">
+        <span className="tech-stack">
+          <strong>Technology:</strong> {plugin.technology}
         </span>
       </div>
 
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            className="plugin-content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {plugin.image && (
-              <div className="plugin-image">
-                <img src={plugin.image} alt={`${plugin.name} interface`} />
-              </div>
-            )}
-            <p className="description">{plugin.description}</p>
-            <div className="features">
-              <h4>Key Features</h4>
-              <ul>
-                {plugin.features.map((feature) => (
-                  <li key={`${plugin.id}-${feature}`}>{feature}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="tech-info">
-              <span className="tech-stack">
-                <strong>Technology:</strong> {plugin.technology}
-              </span>
-            </div>
-
-            {plugin.demoVideo && (
-              <a
-                href={plugin.demoVideo}
-                className="demo-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                Watch Demo
-              </a>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-};
+      {plugin.demoVideo && (
+        <a
+          href={plugin.demoVideo}
+          className="demo-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Watch Demo
+        </a>
+      )}
+    </div>
+  </motion.div>
+);
 
 const CATEGORIES = [
   'All',
@@ -78,8 +62,8 @@ const CATEGORIES = [
 ];
 
 const PluginShowcase = ({ plugins }) => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = React.useState('All');
+  const [searchQuery, setSearchQuery] = React.useState('');
 
   const filteredPlugins = plugins.filter((plugin) => {
     const matchesCategory = selectedCategory === 'All' || plugin.category === selectedCategory;
