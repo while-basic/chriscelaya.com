@@ -1,0 +1,136 @@
+.project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.project-detail .title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.project-detail h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.project-detail .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.project-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 auto 2rem;
+  display: block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-section {
+  margin-bottom: 2.5rem;
+}
+
+.project-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+}
+
+.project-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.project-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-section li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.project-section li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.project-section.cta {
+  text-align: center;
+  background-color: var(--background-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--primary-dark);
+}
+
+.back-to-projects {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.back-to-projects a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.back-to-projects a:hover {
+  color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 1rem;
+  }
+
+  .project-detail h2 {
+    font-size: 2rem;
+  }
+
+  .project-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-section p,
+  .project-section li {
+    font-size: 1rem;
+  }
+
+  .project-image {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
