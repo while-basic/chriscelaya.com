@@ -8,7 +8,7 @@ import {
   faVolumeMute,
 } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-import WaveformVisualizer from './WaveformVisualizer';
+import WaveSurfer from 'wavesurfer.js';
 
 const AudioPlayer = ({ track }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,23 +17,41 @@ const AudioPlayer = ({ track }) => {
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
 
-  const audioRef = useRef(null);
+  const waveformRef = useRef(null);
+  const wavesurfer = useRef(null);
   const progressBarRef = useRef(null);
 
-  const updateProgress = () => {
-    const audio = audioRef.current;
-    setCurrentTime(audio.currentTime);
-  };
-
   useEffect(() => {
-    const audio = audioRef.current;
-    audio.addEventListener('loadedmetadata', () => setDuration(audio.duration));
-    audio.addEventListener('timeupdate', updateProgress);
+    wavesurfer.current = WaveSurfer.create({
+      container: waveformRef.current,
+      waveColor: '#646464',
+      progressColor: '#2e59ba',
+      cursorColor: '#2e59ba',
+      barWidth: 2,
+      barRadius: 3,
+      cursorWidth: 1,
+      height: 80,
+      barGap: 2,
+      responsive: true,
+      normalize: true,
+    });
+
+    wavesurfer.current.load(track.url);
+
+    wavesurfer.current.on('ready', () => {
+      setDuration(wavesurfer.current.getDuration());
+    });
+
+    wavesurfer.current.on('audioprocess', () => {
+      setCurrentTime(wavesurfer.current.getCurrentTime());
+    });
+
     return () => {
-      audio.removeEventListener('loadedmetadata', () => setDuration(audio.duration));
-      audio.removeEventListener('timeupdate', updateProgress);
+      if (wavesurfer.current) {
+        wavesurfer.current.destroy();
+      }
     };
-  }, []);
+  }, [track.url]);
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
@@ -42,35 +60,43 @@ const AudioPlayer = ({ track }) => {
   };
 
   const togglePlay = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
+    if (wavesurfer.current) {
+      if (isPlaying) {
+        wavesurfer.current.pause();
+      } else {
+        wavesurfer.current.play();
+      }
+      setIsPlaying(!isPlaying);
     }
-    setIsPlaying(!isPlaying);
   };
 
   const handleProgressClick = (e) => {
     const progressBar = progressBarRef.current;
     const rect = progressBar.getBoundingClientRect();
     const pos = (e.clientX - rect.left) / progressBar.offsetWidth;
-    audioRef.current.currentTime = pos * duration;
+    if (wavesurfer.current) {
+      wavesurfer.current.seekTo(pos);
+    }
   };
 
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
-    audioRef.current.volume = newVolume;
+    if (wavesurfer.current) {
+      wavesurfer.current.setVolume(newVolume);
+    }
     setIsMuted(newVolume === 0);
   };
 
   const toggleMute = () => {
-    if (isMuted) {
-      audioRef.current.volume = volume;
-      setIsMuted(false);
-    } else {
-      audioRef.current.volume = 0;
-      setIsMuted(true);
+    if (wavesurfer.current) {
+      if (isMuted) {
+        wavesurfer.current.setVolume(volume);
+        setIsMuted(false);
+      } else {
+        wavesurfer.current.setVolume(0);
+        setIsMuted(true);
+      }
     }
   };
 
@@ -88,20 +114,6 @@ const AudioPlayer = ({ track }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <audio
-        ref={audioRef}
-        src={track.url}
-        aria-label={`Audio track: ${track.title} by ${track.artist}`}
-      >
-        <track
-          kind="captions"
-          src=""
-          label="English captions"
-          srcLang="en"
-          default
-        />
-      </audio>
-
       <div className="track-info">
         <motion.h3
           whileHover={{ scale: 1.05 }}
@@ -112,13 +124,7 @@ const AudioPlayer = ({ track }) => {
         <p className="track-artist">{track.artist}</p>
       </div>
 
-      <div className="waveform-container">
-        <WaveformVisualizer
-          audioUrl={track.url}
-          isPlaying={isPlaying}
-          onPlayPause={togglePlay}
-        />
-      </div>
+      <div className="waveform-container" ref={waveformRef} />
 
       <div className="controls">
         <motion.button
