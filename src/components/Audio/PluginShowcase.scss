@@ -69,9 +69,8 @@
         margin: 0;
         font-size: 1.5rem;
         font-weight: 600;
-        background: linear-gradient(135deg, #fff, #ccc);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #000000;
+        text-shadow: none;
       }
 
       .status-badge {
@@ -99,11 +98,28 @@
       }
     }
 
+    .plugin-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 -2rem 2rem -2rem;
+      overflow: hidden;
+      
+      img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 250px;
+        object-fit: contain;
+      }
+    }
+
     .description {
       font-size: 1.1rem;
       line-height: 1.6;
-      color: #ccc;
+      color: #000000;
       margin-bottom: 2rem;
+      text-shadow: none;
     }
 
     .features {
@@ -111,7 +127,8 @@
         font-size: 1.1rem;
         font-weight: 600;
         margin: 0 0 1rem;
-        color: #fff;
+        color: #000000;
+        text-shadow: none;
       }
 
       ul {
@@ -123,15 +140,18 @@
         gap: 0.75rem;
 
         li {
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.3);
           padding: 0.5rem 1rem;
           border-radius: 8px;
           font-size: 0.9rem;
-          color: #ccc;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: #000000;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          text-shadow: none;
+          transition: all 0.2s ease;
 
           &:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.4);
+            color: #000000;
           }
         }
       }
@@ -145,6 +165,14 @@
 
     .plugin-card {
       padding: 1.5rem;
+
+      .plugin-image {
+        margin: 0 -1.5rem 1.5rem -1.5rem;
+        
+        img {
+          max-height: 180px;
+        }
+      }
 
       .plugin-header {
         h3 {
