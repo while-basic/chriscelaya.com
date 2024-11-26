@@ -156,7 +156,7 @@ const AudioProduction = () => {
       id: 'daw',
       name: 'Logic Pro X',
       category: 'software',
-      description: 'Professional digital audio workstation for music production',
+      description: 'First step in the production process, used for recording and editing.',
       image: '/images/plugins/logic-pro-x.webp',
       specs: [
         'Complete sound library',
@@ -169,7 +169,7 @@ const AudioProduction = () => {
       id: 'daw',
       name: 'Abelton Live 12',
       category: 'software',
-      description: 'Professional digital audio workstation for music production',
+      description: 'Backup DAW used for recording and editing.',
       image: '/images/plugins/abelton.png',
       specs: [
         'Complete sound library',
