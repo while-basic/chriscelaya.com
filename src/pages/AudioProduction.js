@@ -56,7 +56,7 @@ const AudioProduction = () => {
     {
       id: 'clouds',
       title: 'Clouds',
-      artist: 'C-Cell (Producer)',
+      artist: 'C-Cell (Producer), PAZ (Vocalist)',
       url: '/audio/clouds.mp3',
       description: '',
       genre: 'Hip-Hop, Boom Bap',
@@ -74,7 +74,7 @@ const AudioProduction = () => {
     {
       id: 'johnny-quest-3023',
       title: 'Johnny Quest 3023',
-      artist: 'C-Cell (Producer)',
+      artist: 'C-Cell (Producer), PAZ (Vocalist)',
       url: '/audio/johnny-quest-3023.mp3',
       description: '',
       genre: 'Hip-Hop',
