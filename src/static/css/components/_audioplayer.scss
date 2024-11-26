@@ -43,8 +43,10 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
 
     .play-button {
+      flex-shrink: 0;
       background: var(--primary);
       border: none;
       border-radius: 50%;
@@ -64,6 +66,7 @@
 
     .progress-container {
       flex: 1;
+      min-width: 200px;
       
       .progress-bar {
         height: 6px;
@@ -94,6 +97,9 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      position: relative;
+      flex-shrink: 0;
+      margin-left: auto;
 
       .mute-button {
         background: none;
@@ -101,6 +107,11 @@
         color: var(--text-primary);
         cursor: pointer;
         padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
         
         &:hover {
           color: var(--primary);
@@ -111,9 +122,12 @@
         width: 80px;
         height: 4px;
         -webkit-appearance: none;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(128, 128, 128, 0.2);
         border-radius: 2px;
         outline: none;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
 
         &::-webkit-slider-thumb {
           -webkit-appearance: none;
@@ -123,6 +137,7 @@
           border-radius: 50%;
           cursor: pointer;
           transition: transform 0.2s ease;
+          margin-top: -4px;
 
           &:hover {
             transform: scale(1.2);
@@ -141,6 +156,21 @@
           &:hover {
             transform: scale(1.2);
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .controls {
+      .volume-controls {
+        width: 100%;
+        order: 3;
+        margin: 1rem 0 0 0;
+        justify-content: flex-end;
+        
+        .volume-slider {
+          width: 120px;
         }
       }
     }

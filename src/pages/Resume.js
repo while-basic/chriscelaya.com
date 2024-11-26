@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import Main from '../layouts/Main';
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
+import AudioPlayer from '../components/Audio/AudioPlayer';
 
 import degrees from '../data/resume/degrees';
 import work from '../data/resume/work';
+import resumeAudio from '../data/resume/audio';
 
 import '../static/css/components/_resume.scss';
 
@@ -38,6 +40,10 @@ const Resume = () => (
           </div>
         </div>
       </header>
+
+      <div className="audio-section">
+        <AudioPlayer track={resumeAudio} />
+      </div>
 
       <div className="resume-content">
         <div className="quick-info">

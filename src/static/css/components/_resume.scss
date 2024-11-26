@@ -126,6 +126,19 @@
           margin-bottom: 1.5rem;
         }
       }
+
+      .audio-section {
+        background: var(--background-secondary);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        
+        @media (max-width: 768px) {
+          padding: 1rem;
+          margin: 1.5rem 0;
+        }
+      }
     }
 
     .skills {
