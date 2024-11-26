@@ -30,6 +30,7 @@
 // Component.
 
 	@import 'components/audioproduction';
+	@import 'components/audioplayer';
 	@import 'components/author';
 	@import 'components/blurb';
 	@import 'components/box';
@@ -49,17 +50,20 @@
 
 // Layout.
 
-	@import 'layout/footer';
-	@import 'layout/header';
-	@import 'layout/intro';
-	@import 'layout/main';
-	@import 'layout/menu';
-	@import 'layout/sidebar';
 	@import 'layout/wrapper';
+	@import 'layout/main';
+	@import 'layout/sidebar';
+	@import 'layout/header';
+	@import 'layout/menu';
+	@import 'layout/intro';
+	@import 'layout/footer';
 
-	@import 'pages/blog';
-	@import 'pages/contact';
+// Pages
+
 	@import 'pages/index';
+	@import 'pages/contact';
 	@import 'pages/notFound';
 	@import 'pages/resume';
+	@import 'pages/skills';
 	@import 'pages/stats';
+	@import 'pages/blog';

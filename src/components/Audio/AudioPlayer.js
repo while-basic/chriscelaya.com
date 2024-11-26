@@ -29,11 +29,10 @@ const AudioPlayer = ({ track }) => {
       cursorColor: '#2e59ba',
       barWidth: 2,
       barRadius: 3,
-      cursorWidth: 1,
-      height: 80,
-      barGap: 2,
       responsive: true,
+      height: 50,
       normalize: true,
+      partialRender: true,
     });
 
     wavesurfer.current.load(track.url);
@@ -43,6 +42,14 @@ const AudioPlayer = ({ track }) => {
     });
 
     wavesurfer.current.on('audioprocess', () => {
+      setCurrentTime(wavesurfer.current.getCurrentTime());
+      const progress = (wavesurfer.current.getCurrentTime() / duration) * 100;
+      if (progressBarRef.current) {
+        progressBarRef.current.style.width = `${progress}%`;
+      }
+    });
+
+    wavesurfer.current.on('seek', () => {
       setCurrentTime(wavesurfer.current.getCurrentTime());
     });
 
@@ -59,7 +66,7 @@ const AudioPlayer = ({ track }) => {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
-  const togglePlay = () => {
+  const handlePlayPause = () => {
     if (wavesurfer.current) {
       if (isPlaying) {
         wavesurfer.current.pause();
@@ -72,66 +79,53 @@ const AudioPlayer = ({ track }) => {
 
   const handleProgressClick = (e) => {
     const progressBar = progressBarRef.current;
-    const rect = progressBar.getBoundingClientRect();
-    const pos = (e.clientX - rect.left) / progressBar.offsetWidth;
-    if (wavesurfer.current) {
+    if (progressBar && wavesurfer.current) {
+      const rect = progressBar.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
       wavesurfer.current.seekTo(pos);
+      setCurrentTime(pos * duration);
     }
   };
 
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
-    if (wavesurfer.current) {
-      wavesurfer.current.setVolume(newVolume);
-    }
-    setIsMuted(newVolume === 0);
-  };
-
-  const toggleMute = () => {
-    if (wavesurfer.current) {
-      if (isMuted) {
-        wavesurfer.current.setVolume(volume);
-        setIsMuted(false);
-      } else {
-        wavesurfer.current.setVolume(0);
-        setIsMuted(true);
-      }
+    wavesurfer.current.setVolume(newVolume);
+    if (newVolume === 0) {
+      setIsMuted(true);
+    } else {
+      setIsMuted(false);
     }
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleProgressClick(e);
+  const handleMute = () => {
+    if (isMuted) {
+      wavesurfer.current.setVolume(volume);
+      setIsMuted(false);
+    } else {
+      wavesurfer.current.setVolume(0);
+      setIsMuted(true);
     }
   };
 
   return (
-    <motion.div
-      className="audio-player"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="audio-player">
       <div className="track-info">
-        <motion.h3
-          whileHover={{ scale: 1.05 }}
-          className="track-title"
-        >
-          {track.title}
-        </motion.h3>
-        <p className="track-artist">{track.artist}</p>
+        <h3 className="track-title">{track.title}</h3>
+        {track.artist && <p className="track-artist">{track.artist}</p>}
       </div>
 
-      <div className="waveform-container" ref={waveformRef} />
+      <div className="waveform-container">
+        <div ref={waveformRef} className="waveform-visualizer" />
+      </div>
 
       <div className="controls">
         <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           type="button"
-          whileTap={{ scale: 0.95 }}
           className="play-button"
-          onClick={togglePlay}
+          onClick={handlePlayPause}
           aria-label={isPlaying ? 'Pause' : 'Play'}
         >
           <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
@@ -139,19 +133,11 @@ const AudioPlayer = ({ track }) => {
 
         <div className="progress-container">
           <div
-            ref={progressBarRef}
             className="progress-bar"
             onClick={handleProgressClick}
-            onKeyPress={handleKeyPress}
-            role="slider"
-            tabIndex={0}
-            aria-label="Audio progress"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round((currentTime / duration) * 100) || 0}
-            aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
           >
             <div
+              ref={progressBarRef}
               className="progress"
               style={{ width: `${(currentTime / duration) * 100}%` }}
             />
@@ -166,7 +152,7 @@ const AudioPlayer = ({ track }) => {
           <button
             type="button"
             className="mute-button"
-            onClick={toggleMute}
+            onClick={handleMute}
             aria-label={isMuted ? 'Unmute' : 'Mute'}
           >
             <FontAwesomeIcon icon={isMuted ? faVolumeMute : faVolumeUp} />
@@ -175,15 +161,15 @@ const AudioPlayer = ({ track }) => {
             type="range"
             min="0"
             max="1"
-            step="0.01"
+            step="0.05"
             value={isMuted ? 0 : volume}
-            onChange={handleVolumeChange}
             className="volume-slider"
-            aria-label="Volume control"
+            onChange={handleVolumeChange}
+            aria-label="Volume"
           />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -191,7 +177,7 @@ AudioPlayer.propTypes = {
   track: PropTypes.shape({
     url: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    artist: PropTypes.string.isRequired,
+    artist: PropTypes.string,
   }).isRequired,
 };
 
