@@ -24,32 +24,6 @@
         }
       }
     }
-
-    .category-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-
-      .category-btn {
-        padding: 0.5rem 1rem;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        background: transparent;
-        cursor: pointer;
-        transition: all 0.2s;
-
-        &:hover {
-          background: #f0f0f0;
-        }
-
-        &.active {
-          background: #007bff;
-          color: white;
-          border-color: #007bff;
-        }
-      }
-    }
   }
 
   .plugins-grid {

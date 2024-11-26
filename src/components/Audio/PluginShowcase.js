@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import './PluginShowcase.scss';
@@ -52,25 +52,13 @@ const PluginCard = ({ plugin }) => (
   </motion.div>
 );
 
-const CATEGORIES = [
-  'All',
-  'Effects',
-  'Instruments',
-  'Mixing',
-  'Mastering',
-  'Utility',
-];
-
 const PluginShowcase = ({ plugins }) => {
-  const [selectedCategory, setSelectedCategory] = React.useState('All');
-  const [searchQuery, setSearchQuery] = React.useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredPlugins = plugins.filter((plugin) => {
-    const matchesCategory = selectedCategory === 'All' || plugin.category === selectedCategory;
-    const matchesSearch = plugin.name.toLowerCase().includes(searchQuery.toLowerCase())
-      || plugin.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const filteredPlugins = plugins.filter((plugin) => (
+    plugin.name.toLowerCase().includes(searchQuery.toLowerCase())
+    || plugin.description.toLowerCase().includes(searchQuery.toLowerCase())
+  ));
 
   return (
     <div className="plugin-showcase">
@@ -82,18 +70,6 @@ const PluginShowcase = ({ plugins }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-        </div>
-        <div className="category-filters">
-          {CATEGORIES.map((category) => (
-            <button
-              type="button"
-              key={category}
-              className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
         </div>
       </div>
 
@@ -116,7 +92,6 @@ PluginCard.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
     features: PropTypes.arrayOf(PropTypes.string).isRequired,
     image: PropTypes.string,
     demoVideo: PropTypes.string,
@@ -130,7 +105,6 @@ PluginShowcase.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
     features: PropTypes.arrayOf(PropTypes.string).isRequired,
     image: PropTypes.string,
     demoVideo: PropTypes.string,
