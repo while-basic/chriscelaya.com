@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Main from '../layouts/Main';
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
@@ -26,7 +25,7 @@ const Resume = () => (
       <header>
         <div className="title">
           <h2>
-            <Link to="resume">Resume</Link>
+            Resume
           </h2>
           <div className="download-container">
             <a
@@ -52,8 +51,8 @@ const Resume = () => (
             <li><strong>Location:</strong> El Paso, Texas</li>
             <li><strong>Email:</strong> chris@chriscelaya.xyz</li>
             <li>
-              <strong>Looking for:</strong> Full Stack Developer, Audio Engineer,
-              or Data Center Infrastructure positions
+              <strong>Looking for:</strong> Full Stack Developer, Audio Engineer, Manufacturing
+              Technician, or Data Center Infrastructure positions
             </li>
           </ul>
         </div>
