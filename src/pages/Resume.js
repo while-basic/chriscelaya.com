@@ -7,6 +7,7 @@ import AudioPlayer from '../components/Audio/AudioPlayer';
 import degrees from '../data/resume/degrees';
 import work from '../data/resume/work';
 import resumeAudio from '../data/resume/audio';
+import coverLetterAudio from '../data/resume/coverLetterAudio';
 
 import '../static/css/components/_resume.scss';
 
@@ -41,7 +42,14 @@ const Resume = () => (
       </header>
 
       <div className="audio-section">
-        <AudioPlayer track={resumeAudio} />
+        <div className="audio-grid">
+          <div className="audio-item">
+            <AudioPlayer track={resumeAudio} />
+          </div>
+          <div className="audio-item">
+            <AudioPlayer track={coverLetterAudio} />
+          </div>
+        </div>
       </div>
 
       <div className="resume-content">

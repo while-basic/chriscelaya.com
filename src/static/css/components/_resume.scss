@@ -138,6 +138,22 @@
           padding: 1rem;
           margin: 1.5rem 0;
         }
+
+        .audio-grid {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          justify-content: space-between;
+
+          .audio-item {
+            flex: 1;
+            min-width: 0; // Prevents flex items from overflowing
+          }
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+          }
+        }
       }
     }
 
