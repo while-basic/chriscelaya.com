@@ -1,91 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './PluginShowcase.scss';
 
 const PluginCard = ({ plugin }) => (
   <motion.div
     className="plugin-card"
-    whileHover={{ scale: 1.01 }}
-    layout
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
   >
     <div className="plugin-header">
       <h3>{plugin.name}</h3>
-      <span className={`status-badge ${plugin.status.toLowerCase()}`}>
-        {plugin.status}
-      </span>
-    </div>
-
-    <div className="plugin-content">
-      {plugin.image && (
-        <div className="plugin-image">
-          <img src={plugin.image} alt={`${plugin.name} interface`} />
-        </div>
+      {plugin.status && (
+        <span className={`status-badge ${plugin.status.toLowerCase()}`}>
+          {plugin.status}
+        </span>
       )}
-      <p className="description">{plugin.description}</p>
+    </div>
+    {plugin.image && (
+      <div className="plugin-image">
+        <img src={plugin.image} alt={plugin.name} />
+      </div>
+    )}
+    <div className="description">{plugin.description}</div>
+    {plugin.features && (
       <div className="features">
-        <h4>Key Features</h4>
+        <h4>Features</h4>
         <ul>
           {plugin.features.map((feature) => (
-            <li key={`${plugin.id}-${feature}`}>{feature}</li>
+            <li key={`${plugin.id}-${feature.toLowerCase().replace(/\s+/g, '-')}`}>{feature}</li>
           ))}
         </ul>
       </div>
-
-      <div className="tech-info">
-        <span className="tech-stack">
-          <strong>Technology:</strong> {plugin.technology}
-        </span>
-      </div>
-
-      {plugin.demoVideo && (
-        <a
-          href={plugin.demoVideo}
-          className="demo-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Watch Demo
-        </a>
-      )}
-    </div>
+    )}
   </motion.div>
 );
 
-const PluginShowcase = ({ plugins }) => {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const filteredPlugins = plugins.filter((plugin) => (
-    plugin.name.toLowerCase().includes(searchQuery.toLowerCase())
-    || plugin.description.toLowerCase().includes(searchQuery.toLowerCase())
-  ));
-
-  return (
-    <div className="plugin-showcase">
-      <div className="plugin-filters">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search plugins..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-      </div>
-
-      <motion.div
-        className="plugins-grid"
-        layout
-      >
-        <AnimatePresence>
-          {filteredPlugins.map((plugin) => (
-            <PluginCard key={plugin.id} plugin={plugin} />
-          ))}
-        </AnimatePresence>
-      </motion.div>
+const PluginShowcase = ({ plugins }) => (
+  <div className="plugin-showcase">
+    <div className="plugins-grid">
+      {plugins.map((plugin) => (
+        <PluginCard key={plugin.id} plugin={plugin} />
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 PluginCard.propTypes = {
   plugin: PropTypes.shape({
@@ -94,9 +54,7 @@ PluginCard.propTypes = {
     description: PropTypes.string.isRequired,
     features: PropTypes.arrayOf(PropTypes.string).isRequired,
     image: PropTypes.string,
-    demoVideo: PropTypes.string,
     status: PropTypes.string.isRequired,
-    technology: PropTypes.string.isRequired,
   }).isRequired,
 };
 
@@ -107,9 +65,7 @@ PluginShowcase.propTypes = {
     description: PropTypes.string.isRequired,
     features: PropTypes.arrayOf(PropTypes.string).isRequired,
     image: PropTypes.string,
-    demoVideo: PropTypes.string,
     status: PropTypes.string.isRequired,
-    technology: PropTypes.string.isRequired,
   })).isRequired,
 };
 
