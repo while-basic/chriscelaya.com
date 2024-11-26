@@ -133,26 +133,20 @@
         padding: 1.5rem;
         margin: 2rem 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        
-        @media (max-width: 768px) {
-          padding: 1rem;
-          margin: 1.5rem 0;
-        }
+        margin-bottom: 2rem;
 
         .audio-grid {
-          display: flex;
-          flex-direction: row;
-          gap: 1rem;
-          justify-content: space-between;
-
-          .audio-item {
-            flex: 1;
-            min-width: 0; // Prevents flex items from overflowing
-          }
-
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+          
           @media (max-width: 768px) {
-            flex-direction: column;
+            grid-template-columns: 1fr;
           }
+        }
+
+        .audio-item {
+          width: 100%;
         }
       }
     }
@@ -256,6 +250,24 @@
         }
       }
     }
+  }
+
+  .audio-section {
+    margin-bottom: 2rem;
+  }
+
+  .audio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .audio-item {
+    width: 100%;
   }
 }
 
