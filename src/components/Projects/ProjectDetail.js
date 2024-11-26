@@ -115,13 +115,20 @@ const ProjectDetail = () => {
           </section>
 
           <section className="project-section cta">
-            <h3>Try it out</h3>
-            <p>{project.callToAction}</p>
-            {project.link && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="button">
-                View Project
-              </a>
-            )}
+            <div className="action-buttons">
+              {project.link && (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="button primary">
+                  <span>View Live Project</span>
+                  <span className="icon">→</span>
+                </a>
+              )}
+              {project.sourceCode && (
+                <a href={project.sourceCode} target="_blank" rel="noopener noreferrer" className="button secondary">
+                  <span>View Source Code</span>
+                  <span className="icon">↗</span>
+                </a>
+              )}
+            </div>
           </section>
         </div>
 
