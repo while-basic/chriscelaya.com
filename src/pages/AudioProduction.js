@@ -136,7 +136,7 @@ const AudioProduction = () => {
       name: 'Universal Audio Volt 2',
       category: 'hardware',
       description: 'Professional audio interface with UAD processing capabilities',
-      image: '/images/equipment/apollo-twin.jpg',
+      image: '/images/volt-2.jpg',
       specs: [
         '24-bit/192 kHz audio conversion',
         'Unison preamp technology',
@@ -149,7 +149,7 @@ const AudioProduction = () => {
       name: 'Scarlett 2i2',
       category: 'hardware',
       description: 'Professional audio interface with UAD processing capabilities',
-      image: '/images/equipment/apollo-twin.jpg',
+      image: '/images/scarlett-2i2.jpg',
       specs: [
         '24-bit/192 kHz audio conversion',
         'Unison preamp technology',
@@ -162,7 +162,7 @@ const AudioProduction = () => {
       name: 'KRK Rokit 5',
       category: 'hardware',
       description: 'Professional studio monitors',
-      image: '/images/equipment/adam-a7x.jpg',
+      image: '/images/krk-rokit-5.jpg',
       specs: [
         '7" woofer',
         'X-ART accelerated ribbon tweeter',
