@@ -41,50 +41,67 @@
 
   .tracks-container {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
 
     .track-card {
       background: var(--background-secondary);
-      padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
 
       .track-details {
-        margin-top: 1rem;
+        padding: 1rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
 
         .description {
           color: var(--text-secondary);
-          font-size: 0.95rem;
+          font-size: 0.9rem;
           margin-bottom: 0.5rem;
+          flex: 1;
         }
 
         .metadata {
           display: flex;
-          gap: 1rem;
-          margin-bottom: 1rem;
+          gap: 0.5rem;
+          margin-bottom: 0.75rem;
+          flex-wrap: wrap;
 
           .genre, .year {
             background: rgba(var(--primary-rgb), 0.1);
             color: var(--primary);
             padding: 0.25rem 0.75rem;
             border-radius: 999px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            white-space: nowrap;
           }
         }
 
         .payhip-buy-button {
           display: block;
-          padding: 0.75rem 1.5rem;
+          padding: 0.75rem 1rem;
           background: #2D5BFF;
           color: #FFFFFF !important;
           text-decoration: none;
           border-radius: 8px;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 0.9rem;
           text-align: center;
           width: 100%;
-          margin-top: 1rem;
+          margin-top: auto;
           border: none;
           cursor: pointer;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -131,16 +148,6 @@
     section {
       h3 {
         font-size: 1.5rem;
-      }
-    }
-
-    .tracks-container {
-      grid-template-columns: 1fr;
-    }
-
-    .plugins-section {
-      .plugins-container {
-        grid-template-columns: 1fr;
       }
     }
   }
