@@ -5,10 +5,10 @@ import Gallery from '../components/Gallery/Gallery';
 const images = [
   {
     id: '1',
-    url: '/images/gallery/image1.jpg',
-    title: 'Electrical Wiring',
-    description: '480 VAC wiring installation, highlighting the importance of safe and efficient electrical systems.',
-    category: 'wiring',
+    url: '/images/gallery/fire-risers.jpg',
+    title: 'Fire Suppression Systems',
+    description: 'Experienced in maintaining and inspecting fire risers and suppression systems to ensure optimal performance and compliance with safety standards.',
+    category: 'Mechanical',
   },
   {
     id: '2',
