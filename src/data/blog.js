@@ -5,45 +5,47 @@ const blog = [
     date: '2024-02-20',
     description: 'Exploring the intersection of industrial automation and modern software development.',
     content: `
-      In today's rapidly evolving technological landscape, the gap between traditional industrial systems 
-      and modern software solutions presents both challenges and opportunities. As a systems integrator 
-      with experience in both domains, I've witnessed firsthand the transformative power of bridging 
-      this divide.
+### Bridging Industrial Systems with Modern Software
 
-      ## The Current State of Industrial Systems
+In today's rapidly evolving technological landscape, the gap between traditional industrial systems 
+and modern software solutions presents both challenges and opportunities. As a systems integrator 
+with experience in both domains, I've witnessed firsthand the transformative power of bridging 
+this divide.
 
-      Many industrial facilities still operate on legacy systems that, while reliable, lack the 
-      flexibility and connectivity of modern software platforms. These systems often:
-      
-      - Run on older protocols and communication standards
-      - Lack modern security features
-      - Have limited data collection and analysis capabilities
-      - Operate in isolation from other business systems
+### The Current State of Industrial Systems
 
-      ## The Path Forward
+Many industrial facilities still operate on legacy systems that, while reliable, lack the 
+flexibility and connectivity of modern software platforms. These systems often:
 
-      The key to modernizing industrial systems lies in thoughtful integration that preserves their 
-      reliability while adding modern capabilities. This involves:
+- Run on older protocols and communication standards
+- Lack modern security features
+- Have limited data collection and analysis capabilities
+- Operate in isolation from other business systems
 
-      1. Implementing middleware solutions that can communicate with both old and new systems
-      2. Adding modern security layers without disrupting existing operations
-      3. Enabling data collection and analytics capabilities
-      4. Creating user-friendly interfaces for system monitoring and control
+### The Path Forward
 
-      ## Best Practices for Integration
+The key to modernizing industrial systems lies in thoughtful integration that preserves their 
+reliability while adding modern capabilities. This involves:
 
-      When bridging industrial and modern systems, consider:
+1. Implementing middleware solutions that can communicate with both old and new systems
+2. Adding modern security layers without disrupting existing operations
+3. Enabling data collection and analytics capabilities
+4. Creating user-friendly interfaces for system monitoring and control
 
-      - Start with small, manageable projects
-      - Implement robust testing procedures
-      - Maintain redundancy for critical systems
-      - Document everything thoroughly
-      - Train staff on new capabilities
+### Best Practices for Integration
 
-      The future of industrial automation lies in its successful integration with modern software 
-      solutions. By thoughtfully bridging this gap, we can unlock new possibilities while maintaining 
-      the reliability that industrial systems require.
-    `,
+When bridging industrial and modern systems, consider:
+
+- Start with small, manageable projects
+- Implement robust testing procedures
+- Maintain redundancy for critical systems
+- Document everything thoroughly
+- Train staff on new capabilities
+
+The future of industrial automation lies in its successful integration with modern software 
+solutions. By thoughtfully bridging this gap, we can unlock new possibilities while maintaining 
+the reliability that industrial systems require.
+`,
     tags: ['Industrial Automation', 'Software Development', 'Systems Integration', 'Industry 4.0'],
     category: 'Technical',
   },
@@ -53,41 +55,43 @@ const blog = [
     date: '2024-02-15',
     description: 'How artificial intelligence is transforming the software development landscape.',
     content: `
-      Artificial Intelligence is revolutionizing how we approach software development. From code 
-      completion to automated testing, AI tools are becoming an integral part of the modern 
-      developer's toolkit.
+### The Role of AI in Modern Software Development
 
-      ## Current AI Applications in Development
+Artificial Intelligence is revolutionizing how we approach software development. From code 
+completion to automated testing, AI tools are becoming an integral part of the modern 
+developer's toolkit.
 
-      Today's AI tools assist developers in numerous ways:
+### Current AI Applications in Development
 
-      - Intelligent code completion and suggestions
-      - Automated code review and bug detection
-      - Test case generation
-      - Performance optimization recommendations
+Today's AI tools assist developers in numerous ways:
 
-      ## The Impact on Development Workflows
+- Intelligent code completion and suggestions
+- Automated code review and bug detection
+- Test case generation
+- Performance optimization recommendations
 
-      AI integration in development workflows has led to:
+### The Impact on Development Workflows
 
-      1. Increased productivity through automated tasks
-      2. More consistent code quality
-      3. Faster debugging and problem resolution
-      4. Enhanced documentation processes
+AI integration in development workflows has led to:
 
-      ## Looking Ahead
+1. Increased productivity through automated tasks
+2. More consistent code quality
+3. Faster debugging and problem resolution
+4. Enhanced documentation processes
 
-      The future of AI in software development promises:
+### Looking Ahead
 
-      - More sophisticated code generation capabilities
-      - Better understanding of developer intent
-      - Improved project management through predictive analytics
-      - Enhanced security vulnerability detection
+The future of AI in software development promises:
 
-      While AI tools are powerful allies in development, they work best when complementing human 
-      expertise rather than replacing it. The key is finding the right balance between automation 
-      and human oversight.
-    `,
+- More sophisticated code generation capabilities
+- Better understanding of developer intent
+- Improved project management through predictive analytics
+- Enhanced security vulnerability detection
+
+While AI tools are powerful allies in development, they work best when complementing human 
+expertise rather than replacing it. The key is finding the right balance between automation 
+and human oversight.
+`,
     tags: ['Artificial Intelligence', 'Software Development', 'Technology Trends', 'Developer Tools'],
     category: 'Technology',
   },

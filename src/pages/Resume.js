@@ -44,10 +44,10 @@ const Resume = () => (
       <div className="audio-section">
         <div className="audio-grid">
           <div className="audio-item">
-            <AudioPlayer track={resumeAudio} />
+            <AudioPlayer track={coverLetterAudio} />
           </div>
           <div className="audio-item">
-            <AudioPlayer track={coverLetterAudio} />
+            <AudioPlayer track={resumeAudio} />
           </div>
         </div>
       </div>
