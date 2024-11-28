@@ -11,6 +11,15 @@ import '../static/css/components/_studioshowcase.scss';
 const AudioProduction = () => {
   const tracks = [
     {
+      id: 'algorithmic-melodies',
+      title: 'Algorithmic Melodies',
+      artist: 'C-Cell (Producer)',
+      url: '/audio/algorithmic-melodies.mp3',
+      description: 'An enchanting composition featuring intricate piano solos weaving through melodic patterns.',
+      genre: 'Jazz, Hip-Hop/R&B',
+      year: '2024',
+    },
+    {
       id: 'home-remix',
       title: 'Home (Remix)',
       artist: 'C-Cell (Producer)',
@@ -305,6 +314,16 @@ const AudioProduction = () => {
                     <span className="year">{track.year}</span>
                   </div>
                   {track.id === 'home-remix' && (
+                    <a
+                      href="https://payhip.com/b/eY3st"
+                      className="payhip-buy-button"
+                      data-theme="grey"
+                      data-product="eY3st"
+                    >
+                      Buy Now
+                    </a>
+                  )}
+                  {track.id === 'algorithmic-melodies' && (
                     <a
                       href="https://payhip.com/b/6k4ib"
                       className="payhip-buy-button"
