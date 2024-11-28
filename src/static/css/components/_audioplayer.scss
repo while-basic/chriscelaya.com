@@ -44,6 +44,18 @@
     align-items: center;
     gap: 1rem;
     flex-wrap: nowrap;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: auto;
+    max-width: calc(100% - 40px);
 
     .play-button {
       flex-shrink: 0;
