@@ -12,10 +12,31 @@ const images = [
   },
   {
     id: '2',
-    url: '/images/gallery/image2.jpg',
-    title: 'Mountain Vista',
+    url: '/images/gallery/commutator-1.jpg',
+    title: 'Commutator',
     description: 'Breathtaking view of the mountains during sunrise, with morning mist rolling through the valleys below.',
     category: 'landscape',
+  },
+  {
+    id: '3',
+    url: '/images/gallery/commutator-2.jpg',
+    title: 'Commutator',
+    description: 'Breathtaking view of the mountains during sunrise, with morning mist rolling through the valleys below.',
+    category: 'landscape',
+  },
+  {
+    id: '4',
+    url: '/images/gallery/wiring-1.jpg',
+    title: 'Commutator',
+    description: 'Breathtaking view of the mountains during sunrise, with morning mist rolling through the valleys below.',
+    category: 'wiring',
+  },
+  {
+    id: '5',
+    url: '/images/gallery/.jpg',
+    title: '',
+    description: '',
+    category: '',
   },
   // Add more images with categories
 ];
