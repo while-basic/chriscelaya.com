@@ -42,34 +42,62 @@
   .tracks-container {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
     .track-card {
-      background: var(--bg-secondary);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.2s ease;
+      background: var(--background-secondary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
       .track-details {
-        padding: 1rem;
+        margin-top: 1rem;
 
         .description {
           color: var(--text-secondary);
-          font-size: 0.9rem;
-          margin-bottom: 1rem;
-          line-height: 1.5;
+          font-size: 0.95rem;
+          margin-bottom: 0.5rem;
         }
 
         .metadata {
           display: flex;
           gap: 1rem;
-          font-size: 0.8rem;
+          margin-bottom: 1rem;
 
-          span {
+          .genre, .year {
             background: rgba(var(--primary-rgb), 0.1);
             color: var(--primary);
             padding: 0.25rem 0.75rem;
             border-radius: 999px;
+            font-size: 0.9rem;
+          }
+        }
+
+        .payhip-buy-button {
+          display: block;
+          padding: 0.75rem 1.5rem;
+          background: #2D5BFF;
+          color: #FFFFFF !important;
+          text-decoration: none;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 1rem;
+          text-align: center;
+          width: 100%;
+          margin-top: 1rem;
+          border: none;
+          cursor: pointer;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: #1E3ECC;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          }
+
+          &:active {
+            transform: translateY(0);
           }
         }
       }

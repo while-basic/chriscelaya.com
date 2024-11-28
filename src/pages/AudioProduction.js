@@ -304,6 +304,16 @@ const AudioProduction = () => {
                     <span className="genre">{track.genre}</span>
                     <span className="year">{track.year}</span>
                   </div>
+                  {track.id === 'home-remix' && (
+                    <a
+                      href="https://payhip.com/b/6k4ib"
+                      className="payhip-buy-button"
+                      data-theme="grey"
+                      data-product="6k4ib"
+                    >
+                      Buy Now
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
