@@ -15,14 +15,14 @@ const images = [
     url: '/images/gallery/commutator-1.jpg',
     title: 'Commutator',
     description: 'Breathtaking view of the mountains during sunrise, with morning mist rolling through the valleys below.',
-    category: 'landscape',
+    category: 'electrical',
   },
   {
     id: '3',
     url: '/images/gallery/commutator-2.jpg',
     title: 'Commutator',
     description: 'Breathtaking view of the mountains during sunrise, with morning mist rolling through the valleys below.',
-    category: 'landscape',
+    category: 'electrical',
   },
   {
     id: '4',
