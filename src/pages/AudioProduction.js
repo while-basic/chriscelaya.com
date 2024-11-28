@@ -11,6 +11,15 @@ import '../static/css/components/_studioshowcase.scss';
 const AudioProduction = () => {
   const tracks = [
     {
+      id: 'home-remix',
+      title: 'Home (Remix)',
+      artist: 'C-Cell (Producer)',
+      url: '/audio/home-remix.mp3',
+      description: 'A fusion of synthwave, hip-hop, and R&B elements with ambient textures',
+      genre: 'Hip-Hop/R&B',
+      year: '2024',
+    },
+    {
       id: 'home',
       title: 'Home',
       artist: 'C-Cell (Producer)',
